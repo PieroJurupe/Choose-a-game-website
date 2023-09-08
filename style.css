@@ -1,15 +1,119 @@
-/* El color de fondo de la pagina */
+/* Se importa la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Reset (no mergin)*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* Definicion del cuerpo de 
+la pagina */
 body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: blueviolet;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Barra del menu */
+.header{
+
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background-color: rgba(1, 1, 1, 0.7);
+padding: 0px 10%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 1000;
+
+}
+/* Se define el nombre de la pagina
+en el header */
+.wbName {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: aliceblue;
+    font-weight: 700;
+
+}
+/* Se define el estilo de la lista */
+.navigation ul{
+    list-style: none;
+
+}
+/* Se define la posicion */
+.header .navigation ul li {
+    float: left;
+    position: relative;
+}
+/* Condiguracion de listas */
+.header .navigation ul li a{
+    font-size: 18px;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+}
+/* Cambio de color al pasar por encima */
+.header .navigation ul li a:hover{
     background-color: blueviolet;
 }
-/* Se define el tamaño de la imagen */
+/*Se ocultan */
+.header .navigation ul li ul{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1, 1, 1, 0.7);
+    display: none;
+}
+/* Se ocultan */
+.header .navigation ul li ul li a{
+    font-size: 15 px;
+    text-transform: capitalize;
+}
+/* Se define la posicion de las viñetas ocultas */
+.header .navigation ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+/* Se define el tamaño de las viñetas al pasar encima */
+}
+.header .navigation ul li ul li{
+    width: 100%;
+/* Se define la posicion de las viñetas */
+}
+.header .navigation ul li:hover > ul{
+    display: initial;
+}
+/* Se configura el toggle para pantallas pequeñas */
+#toggle,
+.header label{
+    display: none;
+    cursor: pointer;
+}
+/* Se configura el menu para pantallas pequeñas */
+.menu {
+    width: 45 px;
+    height: 35 px;
+}
+/* Se define el tamaño de la imagen de
+recomendados */
 section{
     display: flex;
     width: 800px;
     height: 430;
+
 }
 /* Se le dan caracteristicas de visualizacion (opacidad y se 
-reajusta el tamaño para que no se expanda*/
+reajusta el tamaño para que no se expanda
+(recomendados)*/
 section img {
     width: 0px;
     flex-grow: 1;
@@ -18,7 +122,8 @@ section img {
     transition: .5 ease;
 }
 /* Se cambia el cursor por un crosshair al estar encima de la 
-imagen y al pasar encima se retoman valores como la opacidad*/
+imagen y al pasar encima se retoman valores como la opacidad
+(recomendados)*/
 section img:hover {
     cursor: crosshair;
     width: 300px;

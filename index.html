@@ -4,19 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Choice a GAME</title>
+    <!-- Se agrega el css -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!--  Un hola mundo  --> 
+    <!--  Un hola mundo  -->
     <h1>Hola mundo</h1>
     <h2>Juegos recomendados</h2>
-    <!-- Aqui se agregan las imagenes que se usan(HASTA FIN DE SECTION) -->
+
+    <!--  Prueba  -->
+    <header class="header">
+      <div class="wbName">Find Your Game</div>
+      <input type="checkbox" id="toggle" />
+      <label for="toggle">
+        <img class="menu" src="img/logo.png" alt="menu" />
+      </label>
+
+      <!-- Aqui estan los despegables
+    Se crea una clase para hacer la lista  
+    li para la lista lu para ponerla dentro de -->
+      <nav class="navigation">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Recomendaciones</a>
+          <ul>
+            <li><a href="#">Por Género</a></li>
+            <li><a href="#">Más Populares</a></li>
+            <li><a href="#">Consulta a la IA</a></li>
+          </ul>
+        </li>
+          <li><a href="#">Nosotros</a>
+          <ul>
+            <li><a href="#">¿Quienes somos?</a></li>
+            <li><a href="#">Colaboración</a></li>
+          </ul>
+        </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Aqui se agregan las imagenes que se usan(HASTA FIN DE) -->
     <section>
       <img src="img/god of war.jpg" />
       <img src="img/icono dragon ball z.jpg" />
       <img src="img/lol.jpg" />
       <img src="img/miencraft.jpg" />
     </section>
+    <!-- Se agrega el script-->
     <script src="script.js"></script>
   </body>
 </html>
