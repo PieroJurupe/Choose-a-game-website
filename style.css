@@ -1,11 +1,15 @@
+/* El color de fondo de la pagina */
 body {
     background-color: blueviolet;
 }
+/* Se define el tamaño de la imagen */
 section{
     display: flex;
     width: 800px;
     height: 430;
 }
+/* Se le dan caracteristicas de visualizacion (opacidad y se 
+reajusta el tamaño para que no se expanda*/
 section img {
     width: 0px;
     flex-grow: 1;
@@ -13,6 +17,8 @@ section img {
     opacity: .8;
     transition: .5 ease;
 }
+/* Se cambia el cursor por un crosshair al estar encima de la 
+imagen y al pasar encima se retoman valores como la opacidad*/
 section img:hover {
     cursor: crosshair;
     width: 300px;
