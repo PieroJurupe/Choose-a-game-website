@@ -6,6 +6,5 @@
 + Abdiel Esteban Chalco Galindo
 + Marco Idrogo Nuñez
 + Mustapha Percy Velarde Fernandez
-+ Ysamar Rios
 
 
