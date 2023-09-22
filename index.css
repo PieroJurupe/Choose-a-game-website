@@ -6,7 +6,7 @@
   flex-direction: row;
 }
 
-/* Estilos para el botón de toggle (ocultar por defecto) */
+/* ocultar por defecto */
 .toggle-input {
   display: none;
 }
@@ -28,10 +28,10 @@
   transition: 0.4s;
 }
 
-/* Estilos para el menú desplegable (ocultar por defecto) */
+/* ocultar por defecto */
 .principal-menu {
   display: none;
-  /* Agrega estilos de posición y apariencia aquí según sea necesario */
+
 }
 
 /* Mostrar el menú cuando el botón de toggle está activado */
@@ -42,14 +42,6 @@
 .toggle-input:checked + .toggle-label + .principal-menu {
   display: block; /* Muestra el menú cuando el botón de toggle está activado */
 }
-
-/* Estilos adicionales para el menú desplegable (ajusta según tus necesidades) */
-.principal-menu {
-  /* Agrega tus estilos de posición, fondo, colores, etc. aquí */
-}
-
-
-
 
 /*Estilos para los enlaces del menú*/
 .links-de-menu-trend {
