@@ -1,133 +1,96 @@
-/* Se importa la fuente */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-/* Reset (no mergin)*/
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-/* Definicion del cuerpo de 
-la pagina */
-body {
-    min-height: 100vh;
-    box-sizing: border-box;
-    background-color: blueviolet;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Barra del menu */
-.header{
-
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-background-color: rgba(1, 1, 1, 0.7);
-padding: 0px 10%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-z-index: 1000;
-
-}
-/* Se define el nombre de la pagina
-en el header */
-.wbName {
-    font-size: 25px;
-    text-transform: uppercase;
-    color: aliceblue;
-    font-weight: 700;
-
-}
-/* Se define el estilo de la lista */
-.navigation ul{
-    list-style: none;
-
-}
-/* Se define la posicion */
-.header .navigation ul li {
-    float: left;
-    position: relative;
-}
-/* Condiguracion de listas */
-.header .navigation ul li a{
-    font-size: 18px;
-    color: aliceblue;
-    text-decoration: none;
-    padding: 20px;
-    display: block;
-    transition: all .2s ease;
-}
-/* Cambio de color al pasar por encima */
-.header .navigation ul li a:hover{
-    background-color: blueviolet;
-}
-/*Se ocultan */
-.header .navigation ul li ul{
-    position: absolute;
-    right: 0;
-    width: 300px;
-    background-color: rgba(1, 1, 1, 0.7);
-    display: none;
-}
-/* Se ocultan */
-.header .navigation ul li ul li a{
-    font-size: 15 px;
-    text-transform: capitalize;
-}
-/* Se define la posicion de las viñetas ocultas */
-.header .navigation ul li ul li ul{
-    position: absolute;
-    top: 0;
-    right: 300px;
-/* Se define el tamaño de las viñetas al pasar encima */
-}
-.header .navigation ul li ul li{
+:root {
+    --dl-color-gray-500: #595959;
+    --dl-color-gray-700: #999999;
+    --dl-color-gray-900: #D9D9D9;
+    --dl-size-size-large: 144px;
+    --dl-size-size-small: 48px;
+    --dl-color-danger-300: #A22020;
+    --dl-color-danger-500: #BF2626;
+    --dl-color-danger-700: #E14747;
+    --dl-color-gray-black: #000000;
+    --dl-color-gray-white: #FFFFFF;
+    --dl-size-size-medium: 96px;
+    --dl-size-size-xlarge: 192px;
+    --dl-size-size-xsmall: 16px;
+    --dl-space-space-unit: 16px;
+    --dl-color-primary-100: #003EB3;
+    --dl-color-primary-300: #0074F0;
+    --dl-color-primary-500: #14A9FF;
+    --dl-color-primary-700: #85DCFF;
+    --dl-color-success-300: #199033;
+    --dl-color-success-500: #32A94C;
+    --dl-color-success-700: #4CC366;
+    --dl-size-size-xxlarge: 288px;
+    --dl-size-size-maxwidth: 1400px;
+    --dl-radius-radius-round: 50%;
+    --dl-space-space-halfunit: 8px;
+    --dl-space-space-sixunits: 96px;
+    --dl-space-space-twounits: 32px;
+    --dl-radius-radius-radius2: 2px;
+    --dl-radius-radius-radius4: 4px;
+    --dl-radius-radius-radius8: 8px;
+    --dl-space-space-fiveunits: 80px;
+    --dl-space-space-fourunits: 64px;
+    --dl-space-space-threeunits: 48px;
+    --dl-radius-radius-redondeado: 70%;
+    --dl-space-space-oneandhalfunits: 24px;
+  }
+  .button {
+    color: var(--dl-color-gray-black);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: var(--dl-color-gray-white);
+  }
+  .input {
+    color: var(--dl-color-gray-black);
+    cursor: auto;
+    padding: 0.5rem 1rem;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: var(--dl-color-gray-white);
+  }
+  .textarea {
+    color: var(--dl-color-gray-black);
+    cursor: auto;
+    padding: 0.5rem;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: var(--dl-color-gray-white);
+  }
+  .list {
     width: 100%;
-/* Se define la posicion de las viñetas */
-}
-.header .navigation ul li:hover > ul{
-    display: initial;
-}
-/* Se configura el toggle para pantallas pequeñas */
-#toggle,
-.header label{
-    display: none;
-    cursor: pointer;
-}
-/* Se configura el menu para pantallas pequeñas */
-.menu {
-    width: 45 px;
-    height: 35 px;
-}
-/* Se define el tamaño de la imagen de
-recomendados */
-section{
-    display: flex;
-    width: 800px;
-    height: 430;
-
-}
-/* Se le dan caracteristicas de visualizacion (opacidad y se 
-reajusta el tamaño para que no se expanda
-(recomendados)*/
-section img {
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: .8;
-    transition: .5 ease;
-}
-/* Se cambia el cursor por un crosshair al estar encima de la 
-imagen y al pasar encima se retoman valores como la opacidad
-(recomendados)*/
-section img:hover {
-    cursor: crosshair;
-    width: 300px;
-    opacity: 1;
-    filter: contrast(120%);
-
-}
+    margin: 1em 0px 1em 0px;
+    display: block;
+    padding: 0px 0px 0px 1.5rem;
+    list-style-type: none;
+    list-style-position: outside;
+  }
+  .list-item {
+    display: list-item;
+  }
+  .teleport-show {
+    display: flex !important;
+    transform: none !important;
+  }
+  .Content {
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 1.15;
+    text-transform: none;
+    text-decoration: none;
+  }
+  .Heading {
+    font-size: 32px;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 1.15;
+    text-transform: none;
+    text-decoration: none;
+  }
+  

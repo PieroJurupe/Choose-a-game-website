@@ -1,56 +1,438 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Choice a GAME</title>
-    <!-- Se agrega el css -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!--  Un hola mundo  -->
-    <h1>Hola mundo</h1>
-    <h2>Juegos recomendados</h2>
+<html lang="spanish">
 
-    <!--  Prueba  -->
-    <header class="header">
-      <div class="wbName">Find Your Game</div>
-      <input type="checkbox" id="toggle" />
-      <label for="toggle">
-        <img class="menu" src="img/logo.png" alt="menu" />
-      </label>
+<head>
+  <title>Find Your Game</title><!-- Título de la página que aparece en la pestaña del navegador -->
+  <meta name="description" content="encuentra tu juego con ia" /><!-- Megaetiqueta-->
+  <meta property="og:title" content="Find Your Game" />><!-- Metaetiqueta-->
+  <meta property="og:description" content="encuentra tu juego con ia" />><!-- Metaetiqueta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
+ <!-- Estilos CSS en línea para el restablecimiento de estilos predeterminados -->
+  <style data-tag="reset-style-sheet">
+    html {
+      line-height: 1.15;
+    }
 
-      <!-- Aqui estan los despegables
-    Se crea una clase para hacer la lista  
-    li para la lista lu para ponerla dentro de -->
-      <nav class="navigation">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Recomendaciones</a>
-          <ul>
-            <li><a href="#">Por Género</a></li>
-            <li><a href="#">Más Populares</a></li>
-            <li><a href="#">Consulta a la IA</a></li>
-          </ul>
-        </li>
-          <li><a href="#">Nosotros</a>
-          <ul>
-            <li><a href="#">¿Quienes somos?</a></li>
-            <li><a href="#">Colaboración</a></li>
-          </ul>
-        </li>
-        </ul>
-      </nav>
-    </header>
+    body {
+      margin: 0;
+    }
 
-    <!-- Aqui se agregan las imagenes que se usan(HASTA FIN DE) -->
-    <section>
-      <img src="img/god of war.jpg" />
-      <img src="img/icono dragon ball z.jpg" />
-      <img src="img/lol.jpg" />
-      <img src="img/miencraft.jpg" />
-    </section>
-    <!-- Se agrega el script-->
-    <script src="script.js"></script>
-  </body>
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+   <!-- Estilos CSS en línea para los estilos predeterminados de la página -->
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Inter;
+      font-size: 16px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-gray-black);
+      background-color: var(--dl-color-gray-white);
+
+    }
+  </style>
+  
+  <!-- Enlaces a hojas de estilo externas y fuentes de Google Fonts -->
+  <link rel="shortcut icon" href="public/pngtree-black-code-icon-image_1130454-photoroom.png-photoroom.png"
+    type="icon/png" sizes="32x32" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+</head>
+
+<body>
+  <!-- Enlace a la hoja de estilo-->
+  <link rel="stylesheet" href="./style.css" />
+   <!-- Contenido principal de la página -->
+  <div>
+    <link href="./index.css" rel="stylesheet" />
+ <!-- Cabecera de la página -->
+    <div id="principal" class="principal-container">
+      <header data-role="Header" id="Cabecera-menu" class="principal-cabecera-menu">
+        <!-- Barra de navegación -->
+        <div class="principal-contenedor-menu">
+          <!-- Elementos del menú -->
+
+
+          <!-- Botón de toggle para el menú -->
+<input type="checkbox" id="toggle-menu" class="toggle-input" />
+<label for="toggle-menu" class="toggle-label">
+  <div class="menu-icon">
+    <!-- Ícono del menú (SI QUIEREN PONGAN UNA IMAGEN XD)-->
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+</label>
+          </label>
+          <img alt="logo"
+            src="https://media.discordapp.net/attachments/836782334274437181/1152314198131490856/pngtree-black-code-icon-image_1130454-PhotoRoom.png-PhotoRoom.png?width=652&amp;height=652"
+            class="principal-logo-fyg" />
+          <div class="principal-menu">
+            <nav class="links-de-menu-nav links-de-menu-root-class-name12">
+              <a href="https://www.google.com/"></a>
+              <span class="links-de-menu-misjuegos">
+                <span>Mis juegos</span>
+              </span>
+              <span class="links-de-menu-trend"><span>Trends</span></span>
+              <span class="links-de-menu-nosotros">
+                <span>Nosotros</span>
+              </span>
+              <span class="links-de-menu-informacion">
+                <span>Informacion</span>
+                <a href="https://www.google.com/"></a>
+              </span>
+              <span class="links-de-menu-blog"><span>Blog</span></span>
+            </nav>
+          </div>
+        </div>
+        <!-- Botones de registro y inicio de sesión -->
+        <div class="principal-div-botones-usuarios">
+          <button type="button" class="principal-boton-registro button">
+            Login
+          </button>
+          <button class="principal-boton-login button">Registro</button>
+        </div>
+      </header>
+      <!-- Contenido principal de la página -->
+      <div class="principal-inicio">
+        <div class="principal-div-impacto">
+          <h1 class="principal-texto-impacto">
+            Encuentra Tu juego ideal con IA
+          </h1>
+          <div class="principal-div-botones-info">
+            <button type="button" class="principal-boton-empezar button">
+              Empezar
+            </button>
+            <button class="principal-boton-descubrecomo button">
+              Descubre como
+            </button>
+          </div>
+        </div>
+        <div class="principal-render">
+          <iframe src="https://my.spline.design/gameboy-f5e064c3f0af4fe08c54c53f0c344ed8/" frameborder="0" width="100%"
+            height="400px"></iframe>
+        </div>
+        <img
+          src="https://media.discordapp.net/attachments/836782334274437181/1153463437230350366/image.png?width=146&amp;height=57"
+          alt="image" class="principal-tapa-logos" />
+      </div>
+      <div class="principal-primeros-pasos">
+        <h1 class="principal-primeros-pasos-titulo">
+          Descubre el juego perfecto para ti
+        </h1>
+        <div class="principal-div-primeros-pasos">
+          <div class="principal-pasos-parte1">
+            <div class="principal-paso1">
+              <h1 class="principal-paso1-numero">1</h1>
+              <h1 class="principal-paso1-titulo">
+                Entra a findyourgame/test
+              </h1>
+              <span class="principal-paso1-texto">
+                <span>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing.
+                </span>
+                <br />
+              </span>
+            </div>
+            <div class="principal-paso1">
+              <h1 class="principal-paso1-numero">2</h1>
+              <h1 class="principal-paso1-titulo">Realiza el Test</h1>
+              <span class="principal-paso1-texto">
+                <span>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing.
+                </span>
+
+              </span>
+            </div>
+          </div>
+          <div class="principal-pasos-parte2">
+            <div class="principal-paso1">
+              <h1 class="principal-paso1-numero"><span>3</span></h1>
+              <h1 class="principal-paso1-titulo">Descubre los juegos</h1>
+              <span class="principal-paso1-texto">
+
+                <span>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing.
+                </span>
+
+              </span>
+            </div>
+            <div class="principal-paso1">
+              <h1 class="principal-paso1-numero"><span>4</span></h1>
+              <h1 class="principal-paso1-titulo">Encuentra</h1>
+              <span class="principal-paso1-texto">
+
+                <span>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing.
+                </span>
+
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="principal-div-top-juegos">
+        <h1 class="principal-titulo-juegos">
+          <!-- SPAN DE MENU JUEGOS 1 -->
+          <span>Top juegos mas recomendados </span>
+        </h1>
+        <div class="principal-contenedor-article">
+
+          <article class="principal-article-juego1">
+            <!--MARIO BROS-->
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1152338842154717194/0bc65191bacfeb6472461be13e22b1d2.jpg?width=235&height=418"
+              alt="PortadaMario3DWorld">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1152339191900930179/6322df7e4b62bae643052806fbb4c67e-PhotoRoom.png-PhotoRoom.png?width=203&height=418"
+              alt="MarioBrosPng">
+
+          </article>
+          <article class="principal-article-juego2">
+            <!--STRAY-->
+            <img
+              src="https://www.xtrafondos.com/wallpapers/vertical/juego-de-gato-stray-11554.jpg"
+              >
+            <img
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f9104117-19fa-453f-9ca6-01d9978da4ca/df9r26y-1485beec-8518-433c-aee4-23cfd374a37e.png"
+              alt="LinkZeldaPng">
+
+          </article>
+          <article class="principal-article-juego1">
+            <!--RDR2-->
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153516003121184789/256801b2f79a64c4fb33bdd82151b52d.jpg?width=366&height=652"
+              alt="RDR2Portada">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153516249276497930/png-clipart-man-holding-gun-graphic-illustration-red-dead-redemption-2-grand-theft-auto-v-rockstar-games-video-game-others-miscellaneous-microphone-PhotoRoom.png-PhotoRoom.png?width=600&height=652"
+              alt="ArthurPng">
+
+          </article>
+          <article class="principal-article-juego2">
+            <!--ZELDA-->
+            <img
+              src="https://i.pinimg.com/originals/24/a6/c1/24a6c18f79d7e44a07c2e1e5de4ab99c.jpg"
+              alt="PortaZeldaTOTK">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153508497649049670/TheLegendOfZeldaTearsOfTheKingdom_Link_sideimg_01.png?width=433&height=597"
+              alt="LinkZeldaPng">
+
+          </article>
+          <article class="principal-article-juego1">
+            <!--MARIO BROS-->
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153518900848377977/god-of-war-ragnarok-personajes-11258.jpg?width=368&height=652"
+              alt="PortadaMario3DWorld">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153519397755953192/images-PhotoRoom.png-PhotoRoom.png?width=231&height=264"
+              alt="MarioBrosPng">
+
+          </article>
+          
+        </div>
+
+      </div>
+      <div class="principal-div-top-juegos">
+        <h1 class="principal-titulo-juegos">
+          <span>Tendencias del mes </span>
+        </h1>
+        <div class="principal-contenedor-article">
+            <!-- JUEGOS 2-->
+          <article class="principal-article-juego1">
+            <!--MARIO BROS-->
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1152338842154717194/0bc65191bacfeb6472461be13e22b1d2.jpg?width=235&height=418"
+              alt="PortadaMario3DWorld">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1152339191900930179/6322df7e4b62bae643052806fbb4c67e-PhotoRoom.png-PhotoRoom.png?width=203&height=418"
+              alt="MarioBrosPng">
+
+          </article>
+          <article class="principal-article-juego2">
+            <!--STRAY-->
+            <img
+              src="https://www.xtrafondos.com/wallpapers/vertical/juego-de-gato-stray-11554.jpg"
+              >
+            <img
+              src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f9104117-19fa-453f-9ca6-01d9978da4ca/df9r26y-1485beec-8518-433c-aee4-23cfd374a37e.png"
+              alt="LinkZeldaPng">
+
+          </article>
+          <article class="principal-article-juego1">
+            <!--RDR2-->
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153516003121184789/256801b2f79a64c4fb33bdd82151b52d.jpg?width=366&height=652"
+              alt="RDR2Portada">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153516249276497930/png-clipart-man-holding-gun-graphic-illustration-red-dead-redemption-2-grand-theft-auto-v-rockstar-games-video-game-others-miscellaneous-microphone-PhotoRoom.png-PhotoRoom.png?width=600&height=652"
+              alt="ArthurPng">
+
+          </article>
+          <article class="principal-article-juego2">
+            <!--ZELDA-->
+            <img
+              src="https://i.pinimg.com/originals/24/a6/c1/24a6c18f79d7e44a07c2e1e5de4ab99c.jpg"
+              alt="PortaZeldaTOTK">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153508497649049670/TheLegendOfZeldaTearsOfTheKingdom_Link_sideimg_01.png?width=433&height=597"
+              alt="LinkZeldaPng">
+
+          </article>
+          <article class="principal-article-juego1">
+            <!--MARIO BROS-->
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153518900848377977/god-of-war-ragnarok-personajes-11258.jpg?width=368&height=652"
+              alt="PortadaMario3DWorld">
+            <img
+              src="https://media.discordapp.net/attachments/836782334274437181/1153519397755953192/images-PhotoRoom.png-PhotoRoom.png?width=231&height=264"
+              alt="MarioBrosPng">
+
+          </article>
+          
+        </div>
+
+      </div>
+      <footer class="principal-footer-pagina-principal">
+        <div class="principal-separador"></div>
+        <div class="principal-div-footer">
+          <span class="principal-fyg-texto">
+            <span>Find your Game</span>
+            <br />
+          </span>
+          <div class="principal-div-redes-sociales">
+            <a href="https://twitter.com/F1nd_Your_Games">
+            <svg viewBox="0 0 950.8571428571428 1024" class="principal-twitter">
+              <path
+                d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z">
+              </path>
+            </svg>
+            </a>
+            
+            <a href="https://www.instagram.com/find.yourgame/?igshid=MzMyNGUyNmU2YQ%3D%3D">
+            <svg viewBox="0 0 877.7142857142857 1024" class="principal-instagram">
+              <path
+                d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z">
+              </path>
+            </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61551374375595">
+            <svg viewBox="0 0 602.2582857142856 1024" class="principal-facebook">
+              <path
+                d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z">
+              </path>
+            </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
 </html>
