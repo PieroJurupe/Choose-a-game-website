@@ -143,14 +143,14 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font" />
+    <!-- Enlace a la hoja de estilo-->
+  <link rel="stylesheet" href="./style.css" />
+  <link href="./Blog.css" rel="stylesheet" />
+   <!-- Contenido principal de la página -->
+    <link href="./index.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Enlace a la hoja de estilo-->
-  <link rel="stylesheet" href="./style.css" />
-   <!-- Contenido principal de la página -->
-  <div>
-    <link href="./index.css" rel="stylesheet" />
  <!-- Cabecera de la página -->
     <div id="principal" class="principal-container">
       <header data-role="Header" id="Cabecera-menu" class="principal-cabecera-menu">
@@ -193,7 +193,7 @@
                 <span>Informacion</span> 
               </span>
             </a>
-            <a href="https://www.google.com/"><!--Referencia para el boton de Blog-->
+            <a href="Blog.html"><!--Referencia para el boton de Blog-->
               <span class="links-de-menu-blog"><span>Blog</span></span>
             </a>
             </nav>
@@ -210,27 +210,46 @@
           <button class="principal-boton-login button">Registro</button>
         </a>
         </div>
+      </header>
 
-        <div class="cuadro">
-            <h2>Artículo 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="pagina1.html">Leer más</a>
-        </div>
-    
-        <div class="cuadro">
-            <h2>Artículo 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="pagina2.html">Leer más</a>
-        </div>
-    
-        <div class="cuadro">
-            <h2>Artículo 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="pagina3.html">Leer más</a>
-        </div>
 
-        <div class="cuadro">
-          <h2>Artículo 4</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="pagina4.html">Leer más</a>
-      </div>
+
+        <section id="noticias">
+         <div class="container"> 
+          <div class="noticia1">
+            <h2>Beta Abierta - Call of Duty: Modern Warfare 3</h2>
+            <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwiii/COD-BETA-TOUT.jpg">
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae magni necessitatibus iste ducimus dicta sint, quis voluptate expedita, sequi assumenda numquam dignissimos iure, sed minima libero! Odit nam qui quisquam!</p>
+            <a href = "https://www.callofduty.com/es/blog/2023/10/call-of-duty-modern-warfare-III-beta-guide-maps-modes-tips-intel" target="_blank"> 
+            <button type="button" class="boton-leer-mas"> Leer más</button>
+            </a>
+          </div>
+          <div class="noticia2">
+            <h2> PS5 Edición Marvel's Spider-Man 2</h2>
+            <img src="https://img.youtube.com/vi/lM9ICVdZLuQ/maxresdefault.jpg">
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae magni necessitatibus iste ducimus dicta sint, quis voluptate expedita, sequi assumenda numquam dignissimos iure, sed minima libero! Odit nam qui quisquam!</p>
+            <a href = "https://blog.latam.playstation.com/2023/07/21/primer-vistazo-ps5-console-marvels-spider-man-2-limited-edition-bundle/" target="_blank">
+            <button type="button" class="boton-leer-mas"> Leer más</button>
+            </a>
+          </div>
+          <div class="noticia3">
+            <h2>Grand Theft Auto Online cumple 10 años</h2>
+            <img src="https://media-rockstargames-com.akamaized.net/tina-uploads/posts/8971851275a3ak/c6a2f0b1aec4009bdc6d67e50fa6824ca995dcf3.jpg" target="_blank">
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae magni necessitatibus iste ducimus dicta sint, quis voluptate expedita, sequi assumenda numquam dignissimos iure, sed minima libero! Odit nam qui quisquam!</p>
+            <a href = "https://www.rockstargames.com/mx/newswire/article/8971851275a3ak/celebrate-ten-years-of-grand-theft-auto-v-in-gta-online-this-week">            
+            <button type="button" class="boton-leer-mas"> Leer más</button>
+            </a>
+          </div>
+        <div class="noticia4">
+          <h2>¿Pueden los videojuegos ser un apoyo para la educación?</h2>
+          <img src="https://assets.teenvogue.com/photos/5aa941f4d345f0698587d3c5/16:9/w_2560%2Cc_limit/Lede.jpg" target="_blank">
+          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae magni necessitatibus iste ducimus dicta sint, quis voluptate expedita, sequi assumenda numquam dignissimos iure, sed minima libero! Odit nam qui quisquam!</p>
+          <a href = "https://www.eltiempo.com/tecnosfera/videojuegos/pueden-los-videojuegos-ser-un-apoyo-para-la-educacion-814792">
+          <button type="button" class="boton-leer-mas"> Leer más</button>
+          </a>
+        </div>
+      </div> 
+        </section>
+
+
+        
