@@ -55,7 +55,10 @@
 }
 .links-de-menu-blog {
   margin-left: var(--dl-space-space-twounits);
+  transition: 0,5;
+  
 }
+
 /*Estilos para responsive en pantallas pequeñas*/
 @media(max-width: 767px) {
   .links-de-menu-nav {
@@ -130,13 +133,25 @@
   font-style: normal;
   font-weight: 700;
   border-width: 0px;
+  transition: 0.5s;
   margin-right: var(--dl-space-space-halfunit);
+  margin-left: var(--dl-space-space-halfunit);
   background-color: transparent;
+}
+.principal-boton-registro:hover {
+  color: var(--dl-color-gray-white);
+  background-color: var(--dl-color-gray-black);
 }
 .principal-boton-login {
   color: rgb(255, 255, 255);
   border-width: 0px;
+  transition: 0.5s;
   background-color: rgb(203, 122, 255);
+
+}
+.principal-boton-login:hover {
+  color: var(--dl-color-gray-white);
+  background-color: var(--dl-color-gray-black);
 }
 .principal-inicio {
   width: 100%;
@@ -180,7 +195,7 @@
   padding: var(--dl-space-space-unit);
   box-shadow: 5px 5px 10px 0px #d4d4d4;
   font-style: normal;
-  transition: 0.3s;
+  transition: 0.5s;
   font-weight: 500;
   border-color: #ffffff;
   border-width: 0px;
@@ -199,6 +214,7 @@
   width: 159px;
   height: 52px;
   font-style: normal;
+  transition: 0.5s;
   font-weight: 500;
   margin-left: var(--dl-space-space-unit);
   padding-top: var(--dl-space-space-unit);
@@ -208,14 +224,17 @@
   padding-bottom: var(--dl-space-space-unit);
   background-color: transparent;
 }
-.principal-render {
-  display: contents;
+.principal-boton-descubrecomo:hover {
+  color: var(--dl-color-gray-white);
+  background-color: var(--dl-color-gray-black);
 }
+
 .principal-tapa-logos {
-  right: 80px;
-  width: 217px;
-  bottom: 8px;
-  height: 82px;
+  right: 200px;
+  width: 400px;
+  bottom: 40px;
+  height: 30px;
+  height: 90%;
   position: absolute;
   align-self: flex-end;
   object-fit: cover;
