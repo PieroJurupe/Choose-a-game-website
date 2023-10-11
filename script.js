@@ -5,7 +5,6 @@ function makeGptApiRequest(prompt) {
   
     // VALOR KKK
     const apiKey = 'NO:TENEMOS KEY :D (AUN)';
-  
     // Por favor acepta
     const requestData = {
       prompt: prompt,
@@ -50,10 +49,10 @@ function makeGptApiRequest(prompt) {
 
     ]
    //se genra una pregunta base y se llamara constantente
-    response = openai.Completion.create(
+    /*response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct",
         prompt="¿Me puedes ayuadr a elegir un juego?"
-      )
+      )*/
 
   )
   
