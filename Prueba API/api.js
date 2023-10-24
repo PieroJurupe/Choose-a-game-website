@@ -1,4 +1,4 @@
-//Para no llamar la llave a cada rato xd
+/* //Para no llamar la llave a cada rato 
 const API_KEY = 'AQUI VA EL API'
 //funcion  para conectar
 async function getCompletion() {
@@ -20,21 +20,14 @@ async function getCompletion() {
 }
 getCompletion()
 HEAD
-
-/* TODO LO QUE VIENE ES PARA EL CHATBOT */
-/**
- * Returns the current datetime for the message creation.
  */
+/* TODO LO QUE VIENE ES PARA EL CHATBOT */
+
 function getCurrentTimestamp() {
 	return new Date();
 }
-
-/**
- * Renders a message on the chat screen based on the given arguments.
- * This is called from the `showUserMessage` and `showBotMessage`.
- */
 function renderMessageToScreen(args) {
-	// local variables
+	//variables
 	let displayDate = (args.time || getCurrentTimestamp()).toLocaleString('en-IN', {
 		month: 'short',
 		day: 'numeric',
@@ -43,7 +36,7 @@ function renderMessageToScreen(args) {
 	});
 	let messagesContainer = $('.messages');
 
-	// init element
+	// init 
 	let message = $(`
 	<li class="message ${args.message_side}">
 		<div class="avatar"></div>
@@ -54,10 +47,10 @@ function renderMessageToScreen(args) {
 	</li>
 	`);
 
-	// add to parent
+	// agregar mensaje
 	messagesContainer.append(message);
 
-	// animations
+	// animacion
 	setTimeout(function () {
 		message.addClass('appeared');
 	}, 0);
@@ -65,8 +58,7 @@ function renderMessageToScreen(args) {
 }
 
 /**
- * Displays the user message on the chat screen. This is the right side message.
- */
+mostrar el mensaje de usuario */
 function showUserMessage(message, datetime) {
 	renderMessageToScreen({
 		text: message,
@@ -76,8 +68,7 @@ function showUserMessage(message, datetime) {
 }
 
 /**
- * Displays the chatbot message on the chat screen. This is the left side message.
- */
+mostrar mensaje de bot */
 function showBotMessage(message, datetime) {
 	renderMessageToScreen({
 		text: message,
@@ -87,26 +78,24 @@ function showBotMessage(message, datetime) {
 }
 
 /**
- * Get input from user and show it on screen on button click.
- */
+al hacer click en enviar mandar mensaje */
 $('#send_button').on('click', function (e) {
-	// get and show message and reset input
+	// obtener el mensaje y mandarlo
 	showUserMessage($('#msg_input').val());
 	$('#msg_input').val('');
 
-	// show bot message
+	// mostrar mensaje del bot
 	setTimeout(function () {
 		showBotMessage(randomstring());
 	}, 300);
 });
 
 /**
- * Returns a random string. Just to specify bot message to the user.
- */
+prueba para el bot (mensajes randoms) */
 function randomstring(length = 20) {
 	let output = '';
 
-	// magic function
+	// random
 	var randomchar = function () {
 		var n = Math.floor(Math.random() * 62);
 		if (n < 10) return n;
@@ -119,7 +108,7 @@ function randomstring(length = 20) {
 }
 
 /**
- * Set initial bot message to the screen for the user.
+ * mostrar mensaje inicial
  */
 $(window).on('load', function () {
 	showBotMessage('Hello there! Type in a message.');
