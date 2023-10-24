@@ -83,24 +83,37 @@ function showAnswersInConsole() {
 	// Llama a getCompletion después de mostrar las respuestas
 	getCompletion();
 }
-const API_KEY = 'AQui va LA KEY';
+const API_KEY = 'Aqui va la key :D';
 // Función para conectar
 async function getCompletion() {
 	try {
-		const res = await fetch('https://api.openai.com/v1/completions', {
+		const res = await fetch('https://api.openai.com/v1/chat/completions', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 				'Authorization': 'Bearer ' + API_KEY
 			},
 			body: JSON.stringify({
-				model: 'text-davinci-003',
-				prompt: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no des detalles de los juegos solo dame los 4 titulos que me recomiendas`,
-				max_tokens: 20,
+				model: 'gpt-3.5-turbo',
+				messages: [
+					{
+						role: "system",
+						content: "Eres un asistente inteligente que recomienda videojuegos."
+					},
+					{
+						role: "user",
+						content: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no des detalles de los juegos solo dame los 4 titulos que me recomiendas e inicia con el siguiente texto: Los juegos que yo te recomendaria son:`
+					}
+				],
+				max_tokens: 5,
 			})
 		});
 		const data = await res.json();
-		console.log(data);
+		
+		// Accede a la respuesta del modelo
+		const modelResponse = data.choices[0].message.content;
+		
+		showBotMessage(modelResponse); // Muestra la respuesta del modelo como un mensaje del bot
 	} catch (error) {
 		console.error('Error:', error);
 	}
