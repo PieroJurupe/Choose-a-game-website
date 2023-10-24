@@ -83,7 +83,7 @@ function showAnswersInConsole() {
 	// Llama a getCompletion después de mostrar las respuestas
 	getCompletion();
 }
-const API_KEY = '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';
+const API_KEY = 'AQui va LA KEY';
 // Función para conectar
 async function getCompletion() {
 	try {
@@ -115,7 +115,7 @@ $('#send_button').on('click', function (e) {
 		showBotMessage("Para ayudarte a elegir un videojuego te hare un breve test:)", getCurrentTimestamp());
 		// Agregar una pausa antes de la primera pregunta
 		setTimeout(function () {
-			showMultipleChoiceQuestion('¿Cuando juegas videojuegos que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante'], function (answer) {
+			showMultipleChoiceQuestion('Cuando juegas videojuegos ¿Que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante'], function (answer) {
 				respuesta1 = answer;
 				setTimeout(function () {
 					showMultipleChoiceQuestion('¿Los juegos los disfsrutas por?', ['Su jugabilidad', 'Su historia', 'Sus graficos', 'Sus mecanicas'], function (answer) {
