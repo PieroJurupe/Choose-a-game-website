@@ -1,8 +1,5 @@
 
-* 
-
-
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -163,33 +160,14 @@ body {
 
 }
 
-/* Estilos generales del menú */
-.principal-contenedor-menu {
-  /* ... (tus estilos actuales) ... */
+/* Mostrar el menú cuando el botón de toggle está activado */
+.toggle-input:checked + .toggle-label .menu-icon .bar {
+  background-color: transparent; /* Cambia el color de las barras cuando se muestra el menú */
 }
 
-/* Estilos para el botón de toggle en pantallas pequeñas */
-.toggle-label {
-  display: none; /* Ocultar el botón de toggle por defecto en pantallas grandes */
-  cursor: pointer;
+.toggle-input:checked + .toggle-label + .principal-menu {
+  display: block; /* Muestra el menú cuando el botón de toggle está activado */
 }
-
-/* Estilos para pantallas pequeñas (hasta 600px de ancho) */
-@media only screen and (max-width: 600px) {
-  .toggle-label {
-    display: block; /* Mostrar el botón de toggle en pantallas pequeñas */
-  }
-
-  .principal-menu {
-    display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
-  }
-
-  /* Estilos para mostrar el menú al hacer clic en el botón de toggle */
-  .toggle-input:checked + .toggle-label + .principal-menu {
-    display: block; /* Mostrar el menú cuando el botón de toggle está activado */
-  }
-}
-
 
 /*Estilos para los enlaces del menú*/
 .links-de-menu-trend {
