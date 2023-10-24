@@ -1,5 +1,5 @@
 //Para no llamar la llave a cada rato xd
-const API_KEY = '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'
+const API_KEY = 'AQUI VA EL API'
 //funcion  para conectar
 async function getCompletion() {
     const res = await fetch('https://api.openai.com/v1/completions', {
@@ -19,6 +19,7 @@ async function getCompletion() {
     console.log(data)
 }
 getCompletion()
+HEAD
 
 /* TODO LO QUE VIENE ES PARA EL CHATBOT */
 /**
@@ -123,3 +124,4 @@ function randomstring(length = 20) {
 $(window).on('load', function () {
 	showBotMessage('Hello there! Type in a message.');
 });
+
