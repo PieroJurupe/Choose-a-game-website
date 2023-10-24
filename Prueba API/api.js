@@ -111,6 +111,6 @@ function randomstring(length = 20) {
  * mostrar mensaje inicial
  */
 $(window).on('load', function () {
-	showBotMessage('Hello there! Type in a message.');
+	showBotMessage('Hola soy Dios :D');
 });
 
