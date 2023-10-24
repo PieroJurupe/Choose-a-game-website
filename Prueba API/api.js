@@ -1,28 +1,4 @@
-/* //Para no llamar la llave a cada rato 
-const API_KEY = 'AQUI VA EL API'
-//funcion  para conectar
-async function getCompletion() {
-    const res = await fetch('https://api.openai.com/v1/completions', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + API_KEY
-        },
-        body: JSON.stringify({
-            model: 'text-davinci-003',
-            prompt: "Recomiendame tres juegos de aventura no agregues detalles solo los nombres",
-            max_tokens: 20,
-        })
-    })
-
-    const data = await res.json()
-    console.log(data)
-}
-getCompletion()
-HEAD
- */
 /* TODO LO QUE VIENE ES PARA EL CHATBOT */
-
 function getCurrentTimestamp() {
 	return new Date();
 }
@@ -35,7 +11,6 @@ function renderMessageToScreen(args) {
 		minute: 'numeric',
 	});
 	let messagesContainer = $('.messages');
-
 	// init 
 	let message = $(`
 	<li class="message ${args.message_side}">
@@ -46,17 +21,14 @@ function renderMessageToScreen(args) {
 		</div>
 	</li>
 	`);
-
 	// agregar mensaje
 	messagesContainer.append(message);
-
 	// animacion
 	setTimeout(function () {
 		message.addClass('appeared');
 	}, 0);
 	messagesContainer.animate({ scrollTop: messagesContainer.prop('scrollHeight') }, 300);
 }
-
 /**
 mostrar el mensaje de usuario */
 function showUserMessage(message, datetime) {
@@ -66,7 +38,6 @@ function showUserMessage(message, datetime) {
 		message_side: 'right',
 	});
 }
-
 /**
 mostrar mensaje de bot */
 function showBotMessage(message, datetime) {
@@ -76,85 +47,105 @@ function showBotMessage(message, datetime) {
 		message_side: 'left',
 	});
 }
-
 /**
 al hacer click en enviar mandar mensaje */
-//
+// Variables para almacenar las respuestas
+let respuesta1, respuesta2, respuesta3, respuesta4;
+function showMultipleChoiceQuestion(question, options, callback) {
+	// Mostrar la pregunta
+	showBotMessage(question);
+	// Crear un div para las opciones
+	let optionsDiv = $('<div class="options-container"/>');
+	// Para cada opción, crear un botón
+	options.forEach(function (option, index) {
+		let optionButton = $(`<button class="option-button">${option}</button>`);
+		optionButton.on('click', function (e) {
+			// Cuando se hace clic en una opción, mostrar la elección del usuario y deshabilitar todos los botones de opción
+			showUserMessage(option);
+			$('.option-button').attr('disabled', 'disabled');
 
-// ... (tus otras funciones aquí)
-
-function showMultipleChoiceQuestion(question, options) {
-    // Mostrar la pregunta
-    showBotMessage(question);
-
-    // Crear un div para las opciones
-    let optionsDiv = $('<div class="options-container"/>');
-
-    // Para cada opción, crear un botón
-    options.forEach(function(option, index) {
-        let optionButton = $(`<button class="option-button">${option}</button>`);
-        optionButton.on('click', function(e) {
-            // Cuando se hace clic en una opción, mostrar la elección del usuario y deshabilitar todos los botones de opción
-            showUserMessage(option);
-            $('.option-button').attr('disabled', 'disabled');
-        });
-        optionsDiv.append(optionButton);
-    });
-
-    // Agregar las opciones a la ventana de mensajes
-    $('.messages').append(optionsDiv);
+			// Almacenar la respuesta del usuario
+			if (callback) {
+				callback(option);
+			}
+		});
+		optionsDiv.append(optionButton);
+	});
+	// Agregar las opciones a la ventana de mensajes
+	$('.messages').append(optionsDiv);
 }
-
+// ... (tu código existente)
+function showAnswersInConsole() {
+	console.log("Respuesta 1: " + respuesta1);
+	console.log("Respuesta 2: " + respuesta2);
+	console.log("Respuesta 3: " + respuesta3);
+	console.log("Respuesta 4: " + respuesta4);
+	// Llama a getCompletion después de mostrar las respuestas
+	getCompletion();
+}
+const API_KEY = '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';
+// Función para conectar
+async function getCompletion() {
+	try {
+		const res = await fetch('https://api.openai.com/v1/completions', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': 'Bearer ' + API_KEY
+			},
+			body: JSON.stringify({
+				model: 'text-davinci-003',
+				prompt: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no des detalles de los juegos solo dame los 4 titulos que me recomiendas`,
+				max_tokens: 20,
+			})
+		});
+		const data = await res.json();
+		console.log(data);
+	} catch (error) {
+		console.error('Error:', error);
+	}
+}
 $('#send_button').on('click', function (e) {
-    // obtener el mensaje y resetearlo
-    showUserMessage($('#msg_input').val());
-    $('#msg_input').val('');
+	// obtener el mensaje y resetearlo
+	showUserMessage($('#msg_input').val());
+	$('#msg_input').val('');
 
-    // mostrar mensaje del bot
-    setTimeout(function () {
-        showBotMessage("Para ayudarte a elegir un videojuego te hare un breve test:)",getCurrentTimestamp());
-        showMultipleChoiceQuestion('¿Cuando juegas videojuegos que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante']);
-    }, 300);
+	// mostrar mensaje del bot
+	setTimeout(function () {
+		showBotMessage("Para ayudarte a elegir un videojuego te hare un breve test:)", getCurrentTimestamp());
+		// Agregar una pausa antes de la primera pregunta
+		setTimeout(function () {
+			showMultipleChoiceQuestion('¿Cuando juegas videojuegos que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante'], function (answer) {
+				respuesta1 = answer;
+				setTimeout(function () {
+					showMultipleChoiceQuestion('¿Los juegos los disfsrutas por?', ['Su jugabilidad', 'Su historia', 'Sus graficos', 'Sus mecanicas'], function (answer) {
+						respuesta2 = answer;
+						setTimeout(function () {
+							showMultipleChoiceQuestion('¿Que te importa mas en un juego?', ['Que sea nuevo', 'Que sea retro', 'Me da igual'], function (answer) {
+								respuesta3 = answer;
+								setTimeout(function () {
+									showMultipleChoiceQuestion('¿Al escoger un juego por que te guias?', ['Que sea popular', 'Que tenga multiplayer', 'Que tenga buenas reseñas', 'Que sea poco conocido'], function (answer) {
+										respuesta4 = answer;
+										showAnswersInConsole(); // Mostrar las respuestas en la consola
+									});
+								}, 1000);
+							});
+						}, 1000);
+					});
+				}, 1000);
+			});
+		}, 3000); // 3000 milisegundos = 3 segundos
+	}, 300);
 });
-
-
-/* *
-prueba para el bot (mensajes randoms) */
-/* function randomstring(length = 20) {
-	let output = '';
-
-	// random
-	var randomchar = function () {
-		var n = Math.floor(Math.random() * 62);
-		if (n < 10) return n;
-		if (n < 36) return String.fromCharCode(n + 55);
-		return String.fromCharCode(n + 61);
-	};
-
-	while (output.length < length) output += randomchar();
-	return output;
-}
- */
 /**
  * mostrar mensaje inicial
  */
 $(window).on('load', function () {
 	showBotMessage('Hola soy Dios :D');
 });
-
-
-
-
-
-
-
-
-
 $('#msg_input').on('keypress', function (e) {
-    if (e.which == 13) {  // Detecta la tecla Enter
-        $('#send_button').click();  // Simula un clic en el botón de enviar
-        return false;  // Previene la acción por defecto de la tecla Enter
-    }
+	if (e.which == 13) {  // Detecta la tecla Enter
+		$('#send_button').click();  // Simula un clic en el botón de enviar
+		return false;  // Previene la acción por defecto de la tecla Enter
+	}
 });
-
-
