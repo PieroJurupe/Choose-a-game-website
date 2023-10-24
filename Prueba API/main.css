@@ -13,7 +13,7 @@ body {
 	padding-bottom: 20px;
 }
 
-/* layout and common global classes */
+/* layout*/
 /* ---------------------------------------------------------------------- */
 
 .chat_window {
@@ -35,7 +35,7 @@ body {
 	font-size: 20px;
 }
 
-/* messages inside the chatbox */
+/* messages in chatbox */
 /* ---------------------------------------------------------------------- */
 
 .messages {
@@ -148,7 +148,7 @@ body {
 	color: #1a5770;
 }
 
-/* text inpur from user */
+/* text inpur f user */
 
 .bottom_wrapper {
 	background-color: #fff;
@@ -208,3 +208,13 @@ body {
 	-o-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
+.options-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+  }
+  
+  .option-button {
+	margin: 5px;
+  }
+  

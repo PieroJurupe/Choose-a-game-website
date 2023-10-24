@@ -10,8 +10,8 @@ async function getCompletion() {
         },
         body: JSON.stringify({
             model: 'text-davinci-003',
-            prompt: "Recomiendame tres juegos de aventura",
-            max_tokens: 5,
+            prompt: "Recomiendame tres juegos de aventura no agregues detalles solo los nombres",
+            max_tokens: 20,
         })
     })
 
@@ -79,20 +79,48 @@ function showBotMessage(message, datetime) {
 
 /**
 al hacer click en enviar mandar mensaje */
-$('#send_button').on('click', function (e) {
-	// obtener el mensaje y mandarlo
-	showUserMessage($('#msg_input').val());
-	$('#msg_input').val('');
+//
 
-	// mostrar mensaje del bot
-	setTimeout(function () {
-		showBotMessage(randomstring());
-	}, 300);
+// ... (tus otras funciones aquí)
+
+function showMultipleChoiceQuestion(question, options) {
+    // Mostrar la pregunta
+    showBotMessage(question);
+
+    // Crear un div para las opciones
+    let optionsDiv = $('<div class="options-container"/>');
+
+    // Para cada opción, crear un botón
+    options.forEach(function(option, index) {
+        let optionButton = $(`<button class="option-button">${option}</button>`);
+        optionButton.on('click', function(e) {
+            // Cuando se hace clic en una opción, mostrar la elección del usuario y deshabilitar todos los botones de opción
+            showUserMessage(option);
+            $('.option-button').attr('disabled', 'disabled');
+        });
+        optionsDiv.append(optionButton);
+    });
+
+    // Agregar las opciones a la ventana de mensajes
+    $('.messages').append(optionsDiv);
+}
+
+$('#send_button').on('click', function (e) {
+    // obtener el mensaje y resetearlo
+    showUserMessage($('#msg_input').val());
+    $('#msg_input').val('');
+
+    // mostrar mensaje del bot
+    setTimeout(function () {
+        showBotMessage("Para ayudarte a elegir un videojuego te hare un breve test:)",getCurrentTimestamp());
+        showMultipleChoiceQuestion('¿Cuando juegas videojuegos que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante']);
+    }, 300);
 });
 
-/**
+
+/* *
 prueba para el bot (mensajes randoms) */
-function randomstring(length = 20) {
+/* function randomstring(length = 20) {
 	let output = '';
 
 	// random
@@ -106,11 +134,27 @@ function randomstring(length = 20) {
 	while (output.length < length) output += randomchar();
 	return output;
 }
-
+ */
 /**
  * mostrar mensaje inicial
  */
 $(window).on('load', function () {
 	showBotMessage('Hola soy Dios :D');
 });
+
+
+
+
+
+
+
+
+
+$('#msg_input').on('keypress', function (e) {
+    if (e.which == 13) {  // Detecta la tecla Enter
+        $('#send_button').click();  // Simula un clic en el botón de enviar
+        return false;  // Previene la acción por defecto de la tecla Enter
+    }
+});
+
 
