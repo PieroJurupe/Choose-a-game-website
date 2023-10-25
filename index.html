@@ -143,94 +143,79 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font" />
-    <!-- Enlace a la hoja de estilo-->
+  <!-- Enlace a la hoja de estilo-->
   <link rel="stylesheet" href="./style.css" />
   <link href="./Blog.css" rel="stylesheet" />
-   <!-- Contenido principal de la página -->
-    <link href="./index.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Google Fonts links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,600&family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;900&family=REM:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap"
+    rel="stylesheet">
+  <link href="./index.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Enlace a la hoja de estilo-->
   <link rel="stylesheet" href="./style.css" />
-  <!-- Contenido principal de la página -->
   <div>
     <link href="./index.css" rel="stylesheet" />
-    <!-- Cabecera de la página -->
- <!-- Cabecera de la página -->
     <div id="principal" class="principal-container">
-      <header data-role="Header" id="Cabecera-menu" class="principal-cabecera-menu">
-        <!-- Barra de navegación -->
-        <div class="principal-contenedor-menu">
-          <!-- Elementos del menú -->
-          <!-- Botón de toggle para el menú -->
-          </label>
-          <img alt="logo" src="https://static.thenounproject.com/png/333568-200.png" class="principal-logo-fyg" />
-           <!-- Logo que redirige a la pagina principal-->
-           <a href="index.html">
-            <img alt="logo" src="https://static.thenounproject.com/png/333568-200.png"
-              class="principal-logo-fyg" />
-            </a>
-          <div class="principal-menu">
 
-            <a href="https://www.google.com/"> <!--Referencia para el boton de mis juegos-->
-              <nav class="links-de-menu-nav links-de-menu-root-class-name12">
-                <span class="links-de-menu-misjuegos">
-                  <span>Mis juegos</span>
-                </span>
-            </a>
+      <header>
+        <a href="#" class="logo">FYG</a>
+        <ul class="navlist">
+          <li><a href="#">Mis juegos</a></li>
+          <li><a href="#">Trends</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Informacion</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
 
-            <a href="Trends.html"> <!--Referencia para el boton de Trends-->
-              <span class="links-de-menu-trend">
-                <span>Trends</span>
-                </span>
-            </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
 
-            <a href="Nosotros.html"><!--Referencia para el boton de Nosotros-->
-              <span class="links-de-menu-nosotros">
-                <span>Nosotros</span>
-              </span>
-            </a>
 
-            <a href="Blog.html"><!--Referencia para el boton de Blog-->
-              <span class="links-de-menu-blog"><span>Blog</span></span>
-            </a>
-            </nav>
-          </div>
+      </header>
+      <section class="hero">
+        <div class="hero-text">
+          <h4>¿Te gustan los videojuegos?</h4>
+          <h1>Encuentralo con IA</h1>
+          <p>Con nuestra herramienta de IA, podrás explorar juegos para ti,<br> basado en tu perfil de jugador y tus gustos.</p>
+          <a href="#">Descubre como</a>
+          <a href="#" class="ctaa"><i class="ri-play-fill"></i>Mira esto</a>
         </div>
-        <!-- Botones de registro y inicio de sesión -->
-        <div class="principal-div-botones-usuarios">
-          <a href="login.html"> <!--Referencia para el boton de Login (Agregarle efectos)-->
-            <button type="button" class="principal-boton-login button">
-              Login
-            </button>
-          </a>
-          <a href="registro.html"><!--Referencia para el boton de Registro (Agregarle efectos)-->
-            <button class="principal-boton-registro button">Registro</button>
-          </a>
-          <a href="https://www.google.com/"> <!--Referencia para el boton de Login (Agregarle efectos)-->
-          <button  type="button" class="principal-boton-registro button">
-            Login
-          </button>
-        </a>
-        <a href="https://www.google.com/"><!--Referencia para el boton de Registro (Agregarle efectos)-->
-          <button class="principal-boton-login button">Registro</button>
-        </a>
+        <div class="hero-img">
+          <img src="img/FYGbanner.png">
         </div>
-      </header> 
-      <!-- Contenido principal de la página -->
+      </section>
+
+      <div class="icons">
+        <a href="#"><i class="ri-instagram-line"></i></a>
+        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="#"><i class="ri-twitter-fill"></i></a>
+      </div>
+      <div class="scroll-down">
+        <a href="#"><i class="ri-arrow-drop-down-line"></i></a>
+      </div>
+
+
+
+
+
+      <!-- Contenido principal de la página 
       <div class="principal-inicio">
         <div class="principal-div-impacto">
           <h1 class="principal-texto-impacto">
             Encuentra Tu juego ideal con IA
           </h1>
           <div class="principal-div-botones-info">
-            <a href="#ChatBot_FYG"><!--Referencia para el boton de Empezar (Aquí colocaremos el formulario)-->
+            <a href="#ChatBot_FYG">Referencia para el boton de Empezar (Aquí colocaremos el formulario)
               <button type="button" class="principal-boton-empezar button">
                 Empezar
               </button>
             </a>
-            <a href="https://www.google.com/"><!--Referencia para el boton de Descubre como (Aquí colocaremos el About y agregar efectos)-->
+            <a href="https://www.google.com/">referencia para el boton de Descubre como (Aquí colocaremos el About y agregar efectos)
 
               <button type="button" class="principal-boton-descubrecomo button">
                 Descubre como
@@ -241,7 +226,7 @@
         <img
           src="https://media.discordapp.net/attachments/1161483919263289445/1161539127771152445/434698877026201.gif?ex=6538aa9c&is=6526359c&hm=f171f882bc9b096c1acf61f35e08c92375ba61b8fbee52b7df865fbd07f2652f&=&width=3000&height=3000"
           alt="image" class="principal-tapa-logos" />
-      </div>
+      </div>-->
       <div class="principal-primeros-pasos">
         <h1 class="principal-primeros-pasos-titulo">
           Descubre el juego perfecto para ti
@@ -351,16 +336,14 @@
               alt="MarioBrosPng">
 
           </article>
-          <a href = Trends.html>
-            <button type="button" class="boton-descubre-mas"> Descubre más aquí</button>
-           </a>
-
+          <a href=Trends.html> </a>
+          <button type="button" class="boton-descubre-mas"> Descubre más aquí</button>
         </div>
-        
+
 
 
       </div>
-         <!-- CHATBOT-->
+      <!-- CHATBOT-->
       <div class="principal-div-top-juegos">
         <h1 class="principal-titulo-juegos">
           <!-- SPAN DE MENU JUEGOS 1 -->
@@ -374,7 +357,7 @@
             <!-- render -->
             <ul class="messages">
               <li class="message left appeared">
-                
+
               </li>
             </ul>
             <p id="question"></p>
@@ -429,6 +412,9 @@
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
   </script>
+
+
+  <script src="http://unpkg.com/scrollreveal"></script>
   <script src="api.js"></script>
 </body>
 

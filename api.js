@@ -1,3 +1,30 @@
+
+let menu = document.querySelector('#menu-icon');
+let navlist = document.querySelector('.navlist')
+
+menu.onclick = () => {
+	menu.classList.toggle('bx-x');
+	navlist.classList.toggle('open');
+};
+
+const sr = ScrollReveal ({
+	distance: '65px' ,
+	duration: 2600,
+	delay: 450,
+	reset: true
+})
+
+sr.reveal('.hero-text', {delay:200, origin:'top'})
+sr.reveal('.hero-img', {delay:450, origin:'top'})
+sr.reveal('.icons', {delay:500, origin:'left'})
+sr.reveal('.scroll-down', {delay:500, origin:'right'})
+
+
+
+
+
+
+
 /* TODO LO QUE VIENE ES PARA EL CHATBOT */
 function getCurrentTimestamp() {
 	return new Date();
@@ -83,7 +110,7 @@ function showAnswersInConsole() {
 	// Llama a getCompletion después de mostrar las respuestas
 	getCompletion();
 }
-const API_KEY = 'Aqui va la key :D';
+const API_KEY = 'aqui va la key';
 // Función para conectar
 async function getCompletion() {
 	try {
@@ -102,10 +129,10 @@ async function getCompletion() {
 					},
 					{
 						role: "user",
-						content: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no des detalles de los juegos solo dame los 4 titulos que me recomiendas e inicia con el siguiente texto: Los juegos que yo te recomendaria son:`
+						content: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no entres en detalles de los juegos solo dame los nombres de los juegos e inicia con el siguiente texto: Los juegos que yo te recomendaria son:`
 					}
 				],
-				max_tokens: 5,
+				max_tokens: 50,
 			})
 		});
 		const data = await res.json();
@@ -125,7 +152,7 @@ $('#send_button').on('click', function (e) {
 
 	// mostrar mensaje del bot
 	setTimeout(function () {
-		showBotMessage("Para ayudarte a elegir un videojuego te hare un breve test:)", getCurrentTimestamp());
+		showBotMessage("Hola, para ayudarte a elegir un videojuego te hare un breve test:)", getCurrentTimestamp());
 		// Agregar una pausa antes de la primera pregunta
 		setTimeout(function () {
 			showMultipleChoiceQuestion('Cuando juegas videojuegos ¿Que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante'], function (answer) {
@@ -162,3 +189,4 @@ $('#msg_input').on('keypress', function (e) {
 		return false;  // Previene la acción por defecto de la tecla Enter
 	}
 });
+
