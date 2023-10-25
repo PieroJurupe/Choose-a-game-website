@@ -1,7 +1,6 @@
-
+/* Primera sección*/
 #trends .container{
     display: flex;
-    background-color: blue;
     margin-top: 30px;
     padding: 25px;
     border-radius: 20px;
@@ -25,8 +24,71 @@
     margin-top: 30px;
 }
 
-#trends .texto {
+#trends .juego-trend {
     position: relative;
 }
+    
+#trends .titulo {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    color: #fff; /* Color del texto */
+    text-align: center;
+    opacity: 0; /* Inicialmente oculta el texto */
+    transition: opacity 0.3s;
+}
 
+#trends .juego-trend:hover .titulo {
+    opacity: 1;
+}
+
+
+
+
+
+
+/* Segunda sección*/
+
+#categorias .container{
+    display: flex;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: #c6c6f6;
+
+}
+
+#categorias img{
+    flex: 1;
+    padding: 25px;
+    box-sizing: border-box;
+    transition: filter 0.3s;
+}
+
+#categorias img:hover {
+    filter: brightness(40%);
+}
+
+
+#categorias {
+    margin-top: 100px;
+}
+
+#categorias .juego-trend {
+    position: relative;
+}
+    
+#categorias .titulo {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    color: #fff; /* Color del texto */
+    text-align: center;
+    opacity: 0; /* Inicialmente oculta el texto */
+    transition: opacity 0.3s;
+}
+
+#categorias .juego-trend:hover .titulo {
+    opacity: 1;
+}
 
