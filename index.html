@@ -4,8 +4,8 @@
 <head>
   <title>Find Your Game</title><!-- Título de la página que aparece en la pestaña del navegador -->
   <meta name="description" content="encuentra tu juego con ia" /><!-- Megaetiqueta-->
-  <meta property="og:title" content="Find Your Game" /><!-- Metaetiqueta-->
-  <meta property="og:description" content="encuentra tu juego con ia" /><!-- Metaetiqueta-->
+  <meta property="og:title" content="Find Your Game" /> <!-- Metaetiqueta-->
+  <meta property="og:description" content="encuentra tu juego con ia" /> <!-- Metaetiqueta-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
   <meta property="twitter:card" content="summary_large_image" />
@@ -143,14 +143,14 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font" />
+    <!-- Enlace a la hoja de estilo-->
+  <link rel="stylesheet" href="./style.css" />
+  <link href="./Blog.css" rel="stylesheet" />
+   <!-- Contenido principal de la página -->
+    <link href="./index.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Enlace a la hoja de estilo-->
-  <link rel="stylesheet" href="./style.css" />
-   <!-- Contenido principal de la página -->
-  <div>
-    <link href="./index.css" rel="stylesheet" />
  <!-- Cabecera de la página -->
     <div id="principal" class="principal-container">
       <header data-role="Header" id="Cabecera-menu" class="principal-cabecera-menu">
@@ -159,50 +159,63 @@
           <!-- Elementos del menú -->
 
 
+          <!-- Botón de toggle para el menú -->
 
           </label>
-          <img alt="logo"
-            src="https://static.thenounproject.com/png/333568-200.png"
-            class="principal-logo-fyg" />
+           <!-- Logo que redirige a la pagina principal-->
+           <a href="index.html">
+            <img alt="logo" src="https://static.thenounproject.com/png/333568-200.png"
+              class="principal-logo-fyg" />
+            </a>
+
           <div class="principal-menu">
+
             <a href="https://www.google.com/"> <!--Referencia para el boton de mis juegos-->
             <nav class="links-de-menu-nav links-de-menu-root-class-name12">
               <span class="links-de-menu-misjuegos">
                 <span>Mis juegos</span>
               </span>
             </a>
-            <a href="https://www.google.com/"> <!--Referencia para el boton de Trends-->
-              <span class="links-de-menu-trend"><span>Trends</span></span>
+
+            <a href="Trends.html"> <!--Referencia para el boton de Trends-->
+              <span class="links-de-menu-trend">
+                <span>Trends</span>
+                </span>
             </a>
-            <a href="about.html"><!--Referencia para el boton de Nosotros-->
+
+            <a href="https://www.google.com/"><!--Referencia para el boton de Nosotros-->
               <span class="links-de-menu-nosotros">
                 <span>Nosotros</span>
               </span>
             </a>
+
             <a href="https://www.google.com/"><!--Referencia para el boton de Informacion-->
               <span class="links-de-menu-informacion">
                 <span>Informacion</span> 
               </span>
             </a>
+
             <a href="Blog.html"><!--Referencia para el boton de Blog-->
               <span class="links-de-menu-blog"><span>Blog</span></span>
             </a>
+            
             </nav>
           </div>
         </div>
         <!-- Botones de registro y inicio de sesión -->
         <div class="principal-div-botones-usuarios">
-          <a href="login.html"> <!--Referencia para el boton de Login (Agregarle efectos)-->
-          <button  type="button" class="principal-boton-login button">
+          <a href="https://www.google.com/"> <!--Referencia para el boton de Login (Agregarle efectos)-->
+          <button  type="button" class="principal-boton-registro button">
             Login
           </button>
         </a>
-        <a href="registro.html"><!--Referencia para el boton de Registro (Agregarle efectos)-->
-          <button class="principal-boton-registro button">Registro</button>
+        <a href="https://www.google.com/"><!--Referencia para el boton de Registro (Agregarle efectos)-->
+          <button class="principal-boton-login button">Registro</button>
         </a>
         </div>
-
       </header>
+
+
       <!-- Contenido principal de la página -->
       <div class="principal-inicio">
         <div class="principal-div-impacto">
@@ -285,7 +298,7 @@
       <div class="principal-div-top-juegos">
         <h1 class="principal-titulo-juegos">
           <!-- SPAN DE MENU JUEGOS 1 -->
-          <span>Top juegos mas recomendados </span>
+          <span>Tendencias del mes</span>
         </h1>
         <div class="principal-contenedor-article">
 
@@ -339,11 +352,16 @@
               alt="MarioBrosPng">
 
           </article>
-          
+
+          <a href = Trends.html> </a>
+          <button type="button" class="boton-descubre-mas"> Descubre más aquí</button>
         </div>
+        
 
 
       </div>
+
+
       <footer class="principal-footer-pagina-principal">
         <div class="principal-separador"></div>
         <div class="principal-div-footer">

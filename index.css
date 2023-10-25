@@ -54,6 +54,7 @@ body {
 .form-register a:hover {
   color: white;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .form-register .botons {
@@ -121,6 +122,7 @@ body {
 
 .form-login a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /*Estilos para los enlaces del menú*/
@@ -267,6 +269,7 @@ body {
 .principal-boton-registro:hover {
   color: var(--dl-color-gray-white);
   background-color: var(--dl-color-gray-black);
+  cursor: pointer;
 }
 .principal-boton-login {
   color: rgb(255, 255, 255);
@@ -278,6 +281,7 @@ body {
 .principal-boton-login:hover {
   color: var(--dl-color-gray-white);
   background-color: var(--dl-color-gray-black);
+  cursor: pointer;
 }
 .principal-inicio {
   width: 100%;
@@ -335,6 +339,7 @@ body {
 .principal-boton-empezar:hover {
   color: var(--dl-color-gray-white);
   background-color: var(--dl-color-gray-black);
+  cursor: pointer;
 }
 .principal-boton-descubrecomo {
   width: 159px;
@@ -353,6 +358,7 @@ body {
 .principal-boton-descubrecomo:hover {
   color: var(--dl-color-gray-white);
   background-color: var(--dl-color-gray-black);
+  cursor: pointer;
 }
 
 .principal-tapa-logos {
@@ -434,6 +440,38 @@ body {
   color: rgb(0, 0, 0);
   align-self: flex-start;
 }
+
+.boton-descubre-mas {
+  color: #ffffff;
+  width: 206px;
+  padding: var(--dl-space-space-unit);
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  border-color: #ffffff;
+  border-width: 0px;
+  border-radius: var(--dl-radius-radius-radius8);
+  background-color: #cb7aff;
+  border-top-left-radius: 100;
+  border-top-right-radius: 10;
+  border-bottom-left-radius: 10;
+  border-bottom-right-radius: 10;
+  margin-top: 20px;
+  margin-bottom: 3%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.boton-descubre-mas:hover {
+  color: var(--dl-color-gray-white);
+  background-color: var(--dl-color-gray-black);
+  cursor: pointer;
+}
+
+
 /*.principal-article-juegos {
   width: 100%;
   display: grid;
@@ -652,13 +690,15 @@ body {
   border: 1px solid #ffffff;
   border-radius: 20px;
   padding: 4rem 4rem;
+  padding-bottom: 10rem;
+  position: relative
 }
 
 article{
   position: relative;
   width: 250px;
   transition: all .3s ease;
-  margin-right: 2.5rem;
+  margin:auto 20px;
 }
 article img:first-child {
   box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
@@ -684,6 +724,7 @@ article:hover{
     rotateX(10deg)
     translateY(-5%)
     translateZ(0);
+    cursor: pointer;
 }
 article::before{
   content: '';
@@ -702,10 +743,12 @@ article::before{
 }
 article:hover::before{
   opacity: 1;
+  cursor: pointer;
 }
 article:hover img:last-child{
   opacity: 1;
   transform: translateY(10%);
+  cursor: pointer;
 }
 article:last-child{
   margin-right: 0px

@@ -18,6 +18,12 @@
   margin-bottom: 100px;
 }
 
+.boton-leer-mas:hover {
+  color: var(--dl-color-gray-white);
+  background-color: var(--dl-color-gray-black);
+  cursor: pointer;
+}
+
 #noticias .container{
   display: grid;
   grid-template-columns: 1fr 1fr;
