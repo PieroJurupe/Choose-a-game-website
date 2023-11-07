@@ -110,7 +110,7 @@ function showAnswersInConsole() {
 	// Llama a getCompletion después de mostrar las respuestas
 	getCompletion();
 }
-const API_KEY = 'aqui va la key';
+const API_KEY = 'AQUI VA LA KEY';
 // Función para conectar
 async function getCompletion() {
 	try {
@@ -132,7 +132,7 @@ async function getCompletion() {
 						content: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no entres en detalles de los juegos solo dame los nombres de los juegos e inicia con el siguiente texto: Los juegos que yo te recomendaria son:`
 					}
 				],
-				max_tokens: 50,
+				max_tokens: 120,
 			})
 		});
 		const data = await res.json();
