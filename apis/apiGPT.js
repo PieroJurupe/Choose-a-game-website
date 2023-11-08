@@ -9,7 +9,7 @@ header.innerHTML = `
 	<li><a href="misjuegos.html">Mis juegos</a></li>
 	<li><a href="Trends.html">Trends</a></li>
 	<li><a href="Nosotros.html">Nosotros</a></li>
-	<li><a href="Blog.html">Blog</a></li>
+	<li><a href="indexBlog.html">Blog</a></li>
 </ul>
 <ul class="login-y-registro">
 	<div class="div-login">

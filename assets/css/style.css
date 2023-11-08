@@ -618,6 +618,10 @@ body.nav-active {
   --slider-items: 1;
   overflow: hidden;
 }
+.slider1 {
+  --slider-items: 4;
+  overflow: hidden;
+}
 
 .slider-list {
   position: relative;
@@ -1211,9 +1215,14 @@ body.nav-active {
   .slider {
     --slider-items: 3;
   }
-
+  .slider1 {
+    --slider-items: 4;
+  }
   .slider-item {
     min-width: calc(33.33% - 13.33px);
+  }
+  .slider-item1 {
+    min-width: calc(25% - 13.33px);
   }
 
 
