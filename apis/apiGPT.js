@@ -14,7 +14,7 @@ header.innerHTML = `
 <ul class="login-y-registro">
 	<div class="div-login">
 		<li class="login-boton"><a class="login-a" href="#"></a></li>
-		<li class="registro-boton"><a class="register-a" href="registro.html">Registrate</a></li>
+		<li class="registro-boton"><a class="register-a" href="registro.php">Registrate</a></li>
 	</div>
 </ul>
 

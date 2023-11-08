@@ -1,38 +1,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
 
-
-@media (max-width: 1535px) {
-  header {
-    padding: 15px 3%;
-    transition: 2s;
-  }
-
-  .icons {
-    padding: 0 3%;
-    transition: .2s;
-  }
-
-  scroll-down {
-    right: 3%;
-    transition: .2s;
-  }
-
-}
-
-header {
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 33px 9%;
-  background: transparent;
-}
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -81,7 +49,7 @@ header, nav, section, article, aside, footer, hgroup {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: #c6c6f6;
+  background-color: #1e1e1e;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -99,7 +67,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
   margin-bottom: 0px;
-  color: #000000;
+  color: #fff;
   font-weight: 700;
 }
 
@@ -119,26 +87,26 @@ img {
 }
 
 /* 
-
-Global (CAMBIA TODO)
- 
+---------------------------------------------
+Global Styles
+--------------------------------------------- 
 */
 html,
 body {
-  background: #c6c6f6;
+  background: #1f2122;
   font-family: 'Poppins', sans-serif;
 }
 
 body .page-content {
   margin-top: 110px;
-  background-color: #c6c6f6;
+  background-color: #27292a;
   padding: 60px;
   border-radius: 23px;
 }
-#c6c6f6
+
 p {
   font-size: 15px;
-  color: #c6c6f6;
+  color: #666;
   line-height: 30px;
   margin-bottom: 0px;
 }
@@ -201,42 +169,46 @@ p {
 }
 
 .border-no-active a {
-  border-color: #c6c6f6;
-  color: #c6c6f6;
+  border-color: #666;
+  color: #666;
 }
 
 .border-no-active a:hover{
-  border-color: #c6c6f6;
-  color: #c6c6f6;
+  border-color: #666;
+  color: #666;
   background-color: transparent;
 }
 
 section {
   margin-top: 120px;
 }
-/* CAMBIAR EL COLOR TEXTO "TUS JUEGOS" */
-.heading-section h4, h5 {
-  color:black;
+
+.heading-section h4 {
+  color: #ec6090;
   font-size: 34px;
   text-decoration: none;
   margin-bottom: 30px;
   text-align: center;
 }
 
+.heading-section h4 em {
+  color: #fff;
+  font-style: normal;
+  text-decoration: underline;
+}
+
 /* 
 
-
-Pre-loader Style 
+preloader 
 
 */
-/* FONDO PRELOADER */
 .js-preloader {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color:#c6c6f6 ;
+  background-color: rgba(0,0,0,0.99);
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -326,25 +298,17 @@ Pre-loader Style
 
 
 /* 
-
-Most Popular Style 
-
+---------------------------------------------
+Most Popular Style
+--------------------------------------------- 
 */
 
-/* BORDE ENCIMA DEL FONDO */
-.most-popular {
-  margin-top: 30px;
-  padding: 30px;
-  background-color: white;
-  border-radius: 23px;
-}
-/* BORDE DE LOS JUEGOS*/
+
 .most-popular .item {
-  background-color: #c6c6f6;
-  padding: 20px 20px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  margin-top: 30px;
+  background-color:  #27292a;
+  padding: 30px 15px;
+  border-radius: 23px;
+  margin-bottom: 30px;
 }
 
 .most-popular .item .item {
@@ -356,16 +320,8 @@ Most Popular Style
 
 .most-popular .item img {
   border-radius: 23px;
-  height: 250px;
-  width: 400px;
-  transition:0.3s;
+  max-height: 250px;
 }
-
-.most-popular .item img:hover {
-  transform: scale(105%);
-}
-
-
 
 .most-popular .item h4 {
   font-size: 15px;
@@ -380,10 +336,10 @@ Most Popular Style
   margin-top: 7px;
   font-weight: 400;
 }
-/* ITEMS */
+
 .most-popular .item li span{
   display: inline-block;
-  color: #c11f1f;
+  color: #bbb;
   padding-left: 5px;
 }
 
@@ -403,7 +359,7 @@ Most Popular Style
 }
 
 .most-popular .item ul li:last-child i {
-  color: #a44d6b;
+  color: #ec6090;
 }
 
 .most-popular .main-button {

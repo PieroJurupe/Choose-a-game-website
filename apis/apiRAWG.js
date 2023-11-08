@@ -1,4 +1,4 @@
-const apiKey = "c58b550ffd5c4ccc9380c96fe401e864";
+const apiKey = "AQUI VA EL API KKKKK";
 
 const gameList = document.querySelector(".gameList");
 const loaderEl = document.getElementById("js-preloader");
