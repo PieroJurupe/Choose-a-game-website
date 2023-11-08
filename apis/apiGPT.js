@@ -1,4 +1,26 @@
 
+/* HEADER Y FOOOTER DINAMICO*/
+
+const header = document.querySelector("header");
+
+header.innerHTML = `
+<a href="index.html" class="logo">FYG</a>
+<ul class="navlist">
+	<li><a href="misjuegos.html">Mis juegos</a></li>
+	<li><a href="trends.html">Trends</a></li>
+	<li><a href="Nosotros.html">Nosotros</a></li>
+	<li><a href="indexBlog.html">Blog</a></li>
+</ul>
+<ul class="login-y-registro">
+	<div class="div-login">
+		<li class="login-boton"><a class="login-a" href="#"></a></li>
+		<li class="registro-boton"><a class="register-a" href="registro.html">Registrate</a></li>
+	</div>
+</ul>
+
+<div class="bx bx-menu" id="menu-icon"></div>
+		`;
+
 let menu = document.querySelector('#menu-icon');
 let navlist = document.querySelector('.navlist')
 
@@ -7,17 +29,17 @@ menu.onclick = () => {
 	navlist.classList.toggle('open');
 };
 
-const sr = ScrollReveal ({
-	distance: '65px' ,
+const sr = ScrollReveal({
+	distance: '65px',
 	duration: 2600,
 	delay: 450,
 	reset: true
 })
 
-sr.reveal('.hero-text', {delay:200, origin:'top'})
-sr.reveal('.hero-img', {delay:450, origin:'top'})
-sr.reveal('.icons', {delay:500, origin:'left'})
-sr.reveal('.scroll-down', {delay:500, origin:'right'})
+sr.reveal('.hero-text', { delay: 200, origin: 'top' })
+sr.reveal('.hero-img', { delay: 450, origin: 'top' })
+sr.reveal('.icons', { delay: 500, origin: 'left' })
+sr.reveal('.scroll-down', { delay: 500, origin: 'right' })
 
 
 
@@ -110,7 +132,7 @@ function showAnswersInConsole() {
 	// Llama a getCompletion después de mostrar las respuestas
 	getCompletion();
 }
-const API_KEY = 'aqui va la key';
+const API_KEY = 'AQUI VA LA KEY';
 // Función para conectar
 async function getCompletion() {
 	try {
@@ -132,14 +154,14 @@ async function getCompletion() {
 						content: `Recomiendame cuatro videojuegos ten en cuenta que al jugar busco ${respuesta1}, ademas de disfrutar los juegos mas por ${respuesta2}, en cuanto a si el juego es nuevo o viejo opino al 100% - ${respuesta3} - y en los juegos siempre me fijo en ${respuesta4} no entres en detalles de los juegos solo dame los nombres de los juegos e inicia con el siguiente texto: Los juegos que yo te recomendaria son:`
 					}
 				],
-				max_tokens: 50,
+				max_tokens: 120,
 			})
 		});
 		const data = await res.json();
-		
+
 		// Accede a la respuesta del modelo
 		const modelResponse = data.choices[0].message.content;
-		
+
 		showBotMessage(modelResponse); // Muestra la respuesta del modelo como un mensaje del bot
 	} catch (error) {
 		console.error('Error:', error);

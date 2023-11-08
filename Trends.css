@@ -1,95 +1,417 @@
-/* Primera sección*/
-#trends .container{
-    display: flex;
-    margin-top: 30px;
-    padding: 25px;
-    border-radius: 20px;
-    background-color: #c6c6f6;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
+
+@media (max-width: 1535px) {
+  header {
+    padding: 15px 3%;
+    transition: 2s;
+  }
+
+  .icons {
+    padding: 0 3%;
+    transition: .2s;
+  }
+
+  scroll-down {
+    right: 3%;
+    transition: .2s;
+  }
 
 }
 
-#trends img{
-    flex: 1;
-    padding: 25px;
-    box-sizing: border-box;
-    transition: filter 0.3s;
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
 }
 
-#trends img:hover {
-    filter: brightness(40%);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: #c6c6f6;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: #CCC;
+  text-decoration: none !important;
+}
+a:hover {
+	color: #F99;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #000000;
+  font-weight: 700;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 30px;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 
+
+Global (CAMBIA TODO)
+ 
+*/
+html,
+body {
+  background: #c6c6f6;
+  font-family: 'Poppins', sans-serif;
+}
+
+body .page-content {
+  margin-top: 110px;
+  background-color: #c6c6f6;
+  padding: 60px;
+  border-radius: 23px;
+}
+#c6c6f6
+p {
+  font-size: 15px;
+  color: #c6c6f6;
+  line-height: 30px;
+  margin-bottom: 0px;
+}
+
+::selection {
+  background: #e75e8d;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #e75e8d;
+  color: #fff;
+}
+
+.templatemo-item {
+	max-width: 80px; 
+	border-radius: 23px;
+}
+
+.main-button a {
+  font-size: 14px;
+  color: #fff;
+  background-color: #e75e8d;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-button a:hover {
+  background-color: #fff;
+  color: #e75e8d;
+}
+
+.main-border-button a {
+  font-size: 14px;
+  color: #ec6090;
+  background-color: transparent;
+  border: 1px solid #ec6090;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 25px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-border-button a:hover {
+  border-color: #fff;
+  background-color: #fff;
+  color: #e75e8d;
+}
+
+.border-no-active a {
+  border-color: #c6c6f6;
+  color: #c6c6f6;
+}
+
+.border-no-active a:hover{
+  border-color: #c6c6f6;
+  color: #c6c6f6;
+  background-color: transparent;
+}
+
+section {
+  margin-top: 120px;
+}
+/* CAMBIAR EL COLOR TEXTO "TUS JUEGOS" */
+.heading-section h4, h5 {
+  color:black;
+  font-size: 34px;
+  text-decoration: none;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 
+
+
+Pre-loader Style 
+
+*/
+/* FONDO PRELOADER */
+.js-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#c6c6f6 ;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+  -webkit-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.js-preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@-webkit-keyframes dot {
+  50% {
+      -webkit-transform: translateX(96px);
+      transform: translateX(96px);
+  }
+}
+
+@keyframes dot {
+  50% {
+      -webkit-transform: translateX(96px);
+      transform: translateX(96px);
+  }
+}
+
+@-webkit-keyframes dots {
+  50% {
+      -webkit-transform: translateX(-31px);
+      transform: translateX(-31px);
+  }
+}
+
+@keyframes dots {
+  50% {
+      -webkit-transform: translateX(-31px);
+      transform: translateX(-31px);
+  }
+}
+
+.preloader-inner {
+  position: relative;
+  width: 142px;
+  height: 40px;
+  background: transparent;
+}
+
+.preloader-inner .dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 12px;
+  left: 15px;
+  background: #e75e8d;
+  border-radius: 50%;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-animation: dot 2.8s infinite;
+  animation: dot 2.8s infinite;
+}
+
+.preloader-inner .dots {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  margin-top: 12px;
+  margin-left: 31px;
+  -webkit-animation: dots 2.8s infinite;
+  animation: dots 2.8s infinite;
+}
+
+.preloader-inner .dots span {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  background: #e75e8d;
+  border-radius: 50%;
 }
 
 
-#trends {
-    margin-top: 30px;
+/* 
+
+Most Popular Style 
+
+*/
+
+/* BORDE ENCIMA DEL FONDO */
+.most-popular {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 23px;
+}
+/* BORDE DE LOS JUEGOS*/
+.most-popular .item {
+  background-color: #c6c6f6;
+  padding: 20px 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
 
-#trends .juego-trend {
-    position: relative;
-}
-    
-#trends .titulo {
-    position: absolute;
-    bottom: 40px;
-    width: 100%;
-    color: #fff; /* Color del texto */
-    text-align: center;
-    opacity: 0; /* Inicialmente oculta el texto */
-    transition: opacity 0.3s;
+.most-popular .item .item {
+  padding: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  margin-bottom: 0px;
 }
 
-#trends .juego-trend:hover .titulo {
-    opacity: 1;
+.most-popular .item img {
+  border-radius: 23px;
+  height: 250px;
+  width: 400px;
+  transition:0.3s;
 }
 
-
-
-
-
-
-/* Segunda sección*/
-
-#categorias .container{
-    display: flex;
-    margin-top: 30px;
-    padding: 25px;
-    border-radius: 20px;
-    background-color: #c6c6f6;
-
-}
-
-#categorias img{
-    flex: 1;
-    padding: 25px;
-    box-sizing: border-box;
-    transition: filter 0.3s;
-}
-
-#categorias img:hover {
-    filter: brightness(40%);
+.most-popular .item img:hover {
+  transform: scale(105%);
 }
 
 
-#categorias {
-    margin-top: 100px;
-    margin-bottom: 100px;
+
+.most-popular .item h4 {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  display: inline-block;
 }
 
-#categorias .juego-trend {
-    position: relative;
+.most-popular .item span {
+  color: #666;
+  display: block;
+  margin-top: 7px;
+  font-weight: 400;
 }
-    
-#categorias .titulo {
-    position: absolute;
-    bottom: 40px;
-    width: 100%;
-    color: #fff; /* Color del texto */
-    text-align: center;
-    opacity: 0; /* Inicialmente oculta el texto */
-    transition: opacity 0.3s;
-}
-
-#categorias .juego-trend:hover .titulo {
-    opacity: 1;
+/* ITEMS */
+.most-popular .item li span{
+  display: inline-block;
+  color: #c11f1f;
+  padding-left: 5px;
 }
 
+.most-popular .item ul {
+  float: right;
+  margin-top: 20px;
+}
+
+.most-popular .item ul li {
+  text-align: right;
+  color: #fff;
+  font-size: 14px;
+}
+
+.most-popular .item ul li:first-child i {
+  color: yellow;
+}
+
+.most-popular .item ul li:last-child i {
+  color: #a44d6b;
+}
+
+.most-popular .main-button {
+  text-align: center;
+  margin-bottom: -53px;
+}
+
+
+.hidden{
+  display: none;
+}
