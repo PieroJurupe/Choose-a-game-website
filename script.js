@@ -1,3 +1,6 @@
+
+
+
 // Por favor funciona
 function makeGptApiRequest(prompt) {
     // API GPT
@@ -57,3 +60,5 @@ function makeGptApiRequest(prompt) {
 
   )
   
+
+
