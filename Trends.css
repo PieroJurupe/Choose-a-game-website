@@ -1,4 +1,15 @@
-/* Primera sección*/
+
+#principal{
+    position: relative;
+    top: 120px;
+}
+
+footer{
+    position: relative;
+    margin: auto;
+    top:120px;
+}
+
 #trends .container{
     display: flex;
     margin-top: 30px;
