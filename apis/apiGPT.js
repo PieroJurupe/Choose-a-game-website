@@ -6,7 +6,7 @@
 	header.innerHTML = `
 	<a href="index.php" class="logo">FYG</a>
 	<ul class="navlist">
-		<li><a href="misjuegos.html">Mis juegos</a></li>
+		<li><a href="indexMisJuegos.html">Mis juegos</a></li>
 		<li><a href="trends.html">Trends</a></li>
 		<li><a href="Nosotros.html">Nosotros</a></li>
 		<li><a href="indexBlog.html">Blog</a></li>
