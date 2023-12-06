@@ -1,3 +1,8 @@
+<?php
+include("conexion.php");
+include("logeo.php");
+?>
+
 <!DOCTYPE html>
 <html lang="spanish">
 
@@ -158,10 +163,31 @@
 </head>
 
 <body>
+<nav>
+<ul>
+
+<?php if(!isset($_SESSION['nombre_usuario'])) { ?>
+<ul class="login-y-registro">        
+  li class="login-boton"><a class="login-a" href="#"></a></li>
+
+  <li class="registro-boton"><a class="register-a" href="registro.php">Registrate</a></li>
+  <li >login</a></li>
+  <li class="registro-boton"><a class="register-a" href="login.php">login</a></li>  
+          
+  </ul><nav ';
+<?php } ?>
+</ul>
+</nav>
+<?php if(isset($_SESSION['nombre_usuario'])) { ?>
+    <li class="registro-boton">
+        <span style="color: black; background: none;"><?php echo $_SESSION['nombre_usuario']; ?></span>
+    </li>
+<?php } ?>
+  
+
   <link rel="stylesheet" href="./style.css" />
   <div>
     <link href="./index.css" rel="stylesheet" />
-
 
     <!-- principal -- inicio  -->
     <div id="principal" class="principal-container">
@@ -169,20 +195,18 @@
       <header>
         <a href="index.html" class="logo">FYG</a>
         <ul class="navlist">
+       
           <li><a href="misjuegos.html">Mis juegos</a></li>
+
           <li><a href="Trends.html">Trends</a></li>
+
           <li><a href="Nosotros.html">Nosotros</a></li>
+
           <li><a href="about.html">Informacion</a></li>
+
           <li><a href="Blog.html">Blog</a></li>
         </ul>
-        <ul class="login-y-registro">
-          
-          <li class="login-boton"><a class="login-a" href="#"></a></li>
-          <li class="registro-boton"><a class="register-a" href="registro.php">Registrate</a></li>
-          <li >login</a></li>
-          <li class="registro-boton"><a class="register-a" href="login.php">login</a></li>
-          
-        </ul>
+       
 
         <div class="bx bx-menu" id="menu-icon"></div>
 
