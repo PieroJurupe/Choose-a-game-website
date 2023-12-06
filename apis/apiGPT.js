@@ -203,26 +203,46 @@
 		/**
 		 * mostrar mensaje inicial
 		 */
-		let opciones = [
-			"Minecraft",
-			 "Call Of Duty",
-			 "Valorant",
-			 "League Of Legends",
-			 "Super Mario Wonder",
-			 "The Legend Of Zelda Breath of the wild",
-			 "Gran Turismo",
-			 "Pokemon: Escarlata y Purpura",
-			 "Dragon Ball fighterZ",
-			 "God of war: Ragnarok",
-			 "Bloons TD6",
-			 "Cuphead",
-			 "Stardey Valley",
-			 "Portal 2",
-			 "Pizza Tower",
-			 "Terraria"
-		 ];
-		 
-		function obtenerDosRecomendaciones() {			
+
+	let opciones = [
+		"Minecraft",
+		"Call Of Duty",
+		"Valorant",
+		"League Of Legends",
+		"Super Mario Wonder",
+		"The Legend Of Zelda Breath of the wild",
+		"Gran Turismo",
+		"Pokemon: Escarlata y Purpura",
+		"Dragon Ball fighterZ",
+		"God of war: Ragnarok",
+		"Bloons TD6",
+		"Cuphead",
+		"Stardey Valley",
+		"Portal 2",
+		"Pizza Tower",
+	    "Terraria"
+	]
+	let idsImagenes = {
+		"Minecraft": "imagenVideojuego16",
+		"Call Of Duty": "imagenVideojuego2", 
+		"Valorant": "imagenVideojuego15",
+		"League Of Legends": "imagenVideojuego7",
+		"Super Mario Wonder": "imagenVideojuego8",
+		"The Legend Of Zelda Breath of the wild": "imagenVideojuego1",
+		"Gran Turismo": "imagenVideojuego6",
+		"Pokemon: Escarlata y Purpura": "imagenVideojuego11",
+		"Dragon Ball fighterZ": "imagenVideojuego4",
+		"God of war: Ragnarok": "imagenVideojuego5",
+		"Bloons TD6": "imagenVideojuego9",
+		"Cuphead": "imagenVideojuego3",
+		"Stardey Valley": "imagenVideojuego13",
+		"Portal 2": "imagenVideojuego12",
+		"Pizza Tower": "imagenVideojuego10",
+	    "Terraria": "imagenVideojuego14"
+	// ...
+}	;
+
+function obtenerDosRecomendaciones() {			
 	let indices = [];
 	while(indices.length < 2){
 		let indiceAleatorio = Math.floor(Math.random() * opciones.length);
@@ -233,6 +253,9 @@
 	let opcionSeleccionada1 = opciones[indices[0]];
 	let opcionSeleccionada2 = opciones[indices[1]];
 
+	// Guardar las recomendaciones en el almacenamiento local
+	localStorage.setItem('recomendaciones', JSON.stringify([opcionSeleccionada1, opcionSeleccionada2]));
+
 	return [opcionSeleccionada1, opcionSeleccionada2];
 }
 
@@ -241,9 +264,34 @@ function showAnswersInConsole() {
 	console.log("Recomendación 1: " + recomendaciones[0]);
 	console.log("Recomendación 2: " + recomendaciones[1]);
 	setTimeout(function() {
-		showBotMessage("Los videojuegos que te recomiendo son: "+ recomendaciones.join(' y '));
-	}, 2000);
+		showBotMessage("Los videojuegos que te recomiendo son: "+ recomendaciones.join(' y ') ,2000);
+	})	
 }
+
+window.onload = function() {
+	// Recuperar las recomendaciones del almacenamiento local
+	let recomendaciones = JSON.parse(localStorage.getItem('recomendaciones'));
+
+	// Aquí usamos las recomendaciones para obtener los IDs de las imágenes
+	let idImagen1 = idsImagenes[recomendaciones[0]];
+	let idImagen2 = idsImagenes[recomendaciones[1]];
+
+	// Verificamos si los elementos existen antes de intentar cambiar su estilo
+	let imagen1 = document.getElementById(idImagen1);
+	let imagen2 = document.getElementById(idImagen2);
+	if (imagen1) {
+		imagen1.style.display = "block";
+	} else {
+		console.log("No se encontró el elemento con el ID " + idImagen1);
+	}
+	if (imagen2) {
+		imagen2.style.display = "block";
+	} else {
+		console.log("No se encontró el elemento con el ID " + idImagen2);
+	}
+}
+
+
 
 		$(window).on('load', function () {
 			showBotMessage('Bienvenido :D');

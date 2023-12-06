@@ -51,3 +51,23 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
+
+window.onload = function() {
+	let recomendaciones = JSON.parse(localStorage.getItem('recomendaciones'));
+
+	let idImagen1 = idsImagenes[recomendaciones[0]];
+	let idImagen2 = idsImagenes[recomendaciones[1]];
+
+	let imagen1 = document.getElementById(idImagen1);
+	let imagen2 = document.getElementById(idImagen2);
+	if (imagen1) {
+		imagen1.style.display = "block";
+	} else {
+		console.log("No se encontró el elemento con el ID " + idImagen1);
+	}
+	if (imagen2) {
+		imagen2.style.display = "block";
+	} else {
+		console.log("No se encontró el elemento con el ID " + idImagen2);
+	}
+}
