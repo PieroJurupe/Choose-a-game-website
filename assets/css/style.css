@@ -1578,6 +1578,31 @@ body.nav-active {
     margin: 0;
   }
 
+  .login-y-registro { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+  
+  }
+  
+  .div-login {
+    /* Eliminado flex-direction: row */
+  }
+  
+  ul li a {
+    cursor: pointer;
+  
+    color: #00caf2;
+    font-weight: bold;
+    margin: 10px;
+    /* Añadido / padding: 10px; / Añadido */
+  }
+  
+  
+  ul li a:hover {
+    color: #FFFFFF;
+  }
 
 
   header ul li a {

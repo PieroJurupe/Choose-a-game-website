@@ -3433,9 +3433,10 @@ section {
 
 
 /* inicio login y registro*/
-.login-y-registro {
+.login-y-registro { 
   display: flex;
   flex-direction: row;
+  align-items: center;
 
 
 }
