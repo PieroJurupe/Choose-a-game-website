@@ -4,9 +4,9 @@
 	const header = document.querySelector("header");
 
 	header.innerHTML = `
-	<a href="index.html" class="logo">FYG</a>
+	<a href="index.php" class="logo">FYG</a>
 	<ul class="navlist">
-		<li><a href="indexMisJuegos.html">Mis juegos</a></li>
+		<li><a href="misjuegos.html">Mis juegos</a></li>
 		<li><a href="trends.html">Trends</a></li>
 		<li><a href="Nosotros.html">Nosotros</a></li>
 		<li><a href="indexBlog.html">Blog</a></li>
@@ -123,6 +123,7 @@
 		// Agregar las opciones a la ventana de mensajes
 		$('.messages').append(optionsDiv);
 	}
+	// ... (tu código existente)
 	function showAnswersInConsole() {
 		console.log("Respuesta 1: " + respuesta1);
 		console.log("Respuesta 2: " + respuesta2);
@@ -165,93 +166,49 @@
 		} catch (error) {
 			console.error('Error:', error);
 		}
-		}
-		$('#send_button').on('click', function (e) {
-			// obtener el mensaje y resetearlo
-			showUserMessage($('#msg_input').val());
-			$('#msg_input').val('');
-
-			// mostrar mensaje del bot
-			setTimeout(function () {
-				showBotMessage("Hola, para ayudarte a elegir un videojuego te hare un breve test:)", getCurrentTimestamp());
-				// Agregar una pausa antes de la primera pregunta
-				setTimeout(function () {
-					showMultipleChoiceQuestion('Cuando juegas videojuegos ¿Que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante'], function (answer) {
-						respuesta1 = answer;
-						setTimeout(function () {
-							showMultipleChoiceQuestion('¿Los juegos los disfsrutas por?', ['Su jugabilidad', 'Su historia', 'Sus graficos', 'Sus mecanicas'], function (answer) {
-								respuesta2 = answer;
-								setTimeout(function () {
-									showMultipleChoiceQuestion('¿Que te importa mas en un juego?', ['Que sea nuevo', 'Que sea retro', 'Me da igual'], function (answer) {
-										respuesta3 = answer;
-										setTimeout(function () {
-											showMultipleChoiceQuestion('¿Al escoger un juego por que te guias?', ['Que sea popular', 'Que tenga multiplayer', 'Que tenga buenas reseñas', 'Que sea poco conocido'], function (answer) {
-												respuesta4 = answer;
-												showAnswersInConsole(); // Mostrar las respuestas en la consola
-											});
-										}, 1000);
-									});
-								}, 1000);
-							});
-						}, 1000);
-					});
-				}, 3000); // 3000 milisegundos = 3 segundos
-				
-			}, 300);
-			
-		});
-		/**
-		 * mostrar mensaje inicial
-		 */
-		let opciones = [
-			"Minecraft",
-			 "Call Of Duty",
-			 "Valorant",
-			 "League Of Legends",
-			 "Super Mario Wonder",
-			 "The Legend Of Zelda Breath of the wild",
-			 "Gran Turismo",
-			 "Pokemon: Escarlata y Purpura",
-			 "Dragon Ball fighterZ",
-			 "God of war: Ragnarok",
-			 "Bloons TD6",
-			 "Cuphead",
-			 "Stardey Valley",
-			 "Portal 2",
-			 "Pizza Tower",
-			 "Terraria"
-		 ];
-		 
-		function obtenerDosRecomendaciones() {			
-	let indices = [];
-	while(indices.length < 2){
-		let indiceAleatorio = Math.floor(Math.random() * opciones.length);
-		if(!indices.includes(indiceAleatorio)){
-			indices.push(indiceAleatorio);
-		}
 	}
-	let opcionSeleccionada1 = opciones[indices[0]];
-	let opcionSeleccionada2 = opciones[indices[1]];
+	$('#send_button').on('click', function (e) {
+		// obtener el mensaje y resetearlo
+		showUserMessage($('#msg_input').val());
+		$('#msg_input').val('');
 
-	return [opcionSeleccionada1, opcionSeleccionada2];
-}
-
-function showAnswersInConsole() {
-	let recomendaciones = obtenerDosRecomendaciones();
-	console.log("Recomendación 1: " + recomendaciones[0]);
-	console.log("Recomendación 2: " + recomendaciones[1]);
-	setTimeout(function() {
-		showBotMessage("Los videojuegos que te recomiendo son: "+ recomendaciones.join(' y '));
-	}, 2000);
-}
-
-		$(window).on('load', function () {
-			showBotMessage('Bienvenido :D');
-		});
-		$('#msg_input').on('keypress', function (e) {
-			if (e.which == 13) {  // Detecta la tecla Enter
-				$('#send_button').click();  // Simula un clic en el botón de enviar
-				return false;  // Previene la acción por defecto de la tecla Enter
-			}
-		});
+		// mostrar mensaje del bot
+		setTimeout(function () {
+			showBotMessage("Hola, para ayudarte a elegir un videojuego te hare un breve test:)", getCurrentTimestamp());
+			// Agregar una pausa antes de la primera pregunta
+			setTimeout(function () {
+				showMultipleChoiceQuestion('Cuando juegas videojuegos ¿Que buscas?', ['Relajarme', 'Competir', 'Jugar con amigos', 'Algo desafiante'], function (answer) {
+					respuesta1 = answer;
+					setTimeout(function () {
+						showMultipleChoiceQuestion('¿Los juegos los disfsrutas por?', ['Su jugabilidad', 'Su historia', 'Sus graficos', 'Sus mecanicas'], function (answer) {
+							respuesta2 = answer;
+							setTimeout(function () {
+								showMultipleChoiceQuestion('¿Que te importa mas en un juego?', ['Que sea nuevo', 'Que sea retro', 'Me da igual'], function (answer) {
+									respuesta3 = answer;
+									setTimeout(function () {
+										showMultipleChoiceQuestion('¿Al escoger un juego por que te guias?', ['Que sea popular', 'Que tenga multiplayer', 'Que tenga buenas reseñas', 'Que sea poco conocido'], function (answer) {
+											respuesta4 = answer;
+											showAnswersInConsole(); // Mostrar las respuestas en la consola
+										});
+									}, 1000);
+								});
+							}, 1000);
+						});
+					}, 1000);
+				});
+			}, 3000); // 3000 milisegundos = 3 segundos
+		}, 300);
+	});
+	/**
+	 * mostrar mensaje inicial
+	 */
+	$(window).on('load', function () {
+		showBotMessage('Bienvenido :D');
+	});
+	$('#msg_input').on('keypress', function (e) {
+		if (e.which == 13) {  // Detecta la tecla Enter
+			$('#send_button').click();  // Simula un clic en el botón de enviar
+			return false;  // Previene la acción por defecto de la tecla Enter
+		}
+	});
 
