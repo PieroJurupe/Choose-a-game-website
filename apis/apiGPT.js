@@ -7,7 +7,7 @@ header.innerHTML = `
 	<a href="index.php" class="logo">FYG</a>
 	<ul class="navlist">
 		<li><a href="indexMisJuegos.html">Mis juegos</a></li>
-		<li><a href="trends.html">Trends</a></li>
+		<li><a href="Trends.html">Trends</a></li>
 		<li><a href="Nosotros.html">Nosotros</a></li>
 		<li><a href="indexBlog.html">Blog</a></li>
 	</ul>
@@ -40,11 +40,6 @@ sr.reveal('.hero-text', { delay: 200, origin: 'top' })
 sr.reveal('.hero-img', { delay: 450, origin: 'top' })
 sr.reveal('.icons', { delay: 500, origin: 'left' })
 sr.reveal('.scroll-down', { delay: 500, origin: 'right' })
-
-
-
-
-
 
 
 /* TODO LO QUE VIENE ES PARA EL CHATBOT */
@@ -123,7 +118,6 @@ function showMultipleChoiceQuestion(question, options, callback) {
 	// Agregar las opciones a la ventana de mensajes
 	$('.messages').append(optionsDiv);
 }
-// ... (tu código existente)
 function showAnswersInConsole() {
 	console.log("Respuesta 1: " + respuesta1);
 	console.log("Respuesta 2: " + respuesta2);
@@ -238,12 +232,14 @@ $('#send_button').on('click', function (e) {
 // 	 "Portal 2",
 // 	 "Pizza Tower",
 // 	 "Terraria"
+/*  
 
+ PRUEBA AHHHHHHH
 const opciones = [
 	{
 		name: "Minecraft",
 		imageId: "imagenVideojuego1",
-		url: "imagenesapi/botw.png"
+		url: "imagenesapi/maincra.png"
 	},
 	{
 		name: "Call Of Duty",
@@ -253,28 +249,81 @@ const opciones = [
 	{
 		name: "Valorant",
 		imageId: "imagenVideojuego3",
-		url: "./imagenesapi/cuphead.png"
+		url: "./imagenesapi/valo.png"
 	},
 	{
 		name: "League Of Legends",
 		imageId: "imagenVideojuego4",
-		url: "./imagenesapi/goku.png"
+		url: "./imagenesapi/lol.png"
 	},
 	{
 		name: "Super Mario Wonder",
 		imageId: "imagenVideojuego5",
-		url: "./imagenesapi/gow.png"
+		url: "./imagenesapi/mario.png"
 	},
 	{
 		name: "The Legend Of Zelda Breath of the wild",
 		imageId: "imagenVideojuego6",
+		url: "./imagenesapi/botw.png"
+	},
+	{
+		name: "Dragon Ball Figther Z",
+		imageId: "imagenVideojuego7",
+		url: "./imagenesapi/goku.png"
+	},
+	{
+		name: "God of War: Ragnarok",
+		imageId: "imagenVideojuego8",
+		url: "./imagenesapi/gow.png"
+	},
+	{
+		name: "Gran Turismo 7",
+		imageId: "imagenVideojuego9",
 		url: "./imagenesapi/gt7.png"
+	},
+	{
+		name: "Bloons TD6",
+		imageId: "imagenVideojuego10",
+		url: "./imagenesapi/monos.png"
+	},
+	{
+		name: "Pizza Tower",
+		imageId: "imagenVideojuego11",
+		url: "./imagenesapi/pizzatower.png"
+	},
+	{
+		name: "Pokemon: Escarlata y Perla",
+		imageId: "imagenVideojuego12",
+		url: "./imagenesapi/pokemon.png"
+	},
+	{
+		name: "Portal 2",
+		imageId: "imagenVideojuego13",
+		url: "./imagenesapi/portal2.png"
+	},
+	{
+		name: "Stardew Valley",
+		imageId: "imagenVideojuego14",
+		url: "./imagenesapi/stardewvalley.png"
+	},
+	{
+		name: "Terraria",
+		imageId: "imagenVideojuego15",
+		url: "./imagenesapi/terraria.png"
+	},
+	{
+		name: "Valorant",
+		imageId: "imagenVideojuego6",
+		url: "./imagenesapi/valo.png"
 	}
+	
+	
+
 ];
 
 function obtenerDosRecomendaciones() {
 	let indices = [];
-	while (indices.length < 2) {
+	while (indices.length < 3) {
 		let indiceAleatorio = Math.floor(Math.random() * opciones.length);
 		if (!indices.includes(indiceAleatorio)) {
 			indices.push(indiceAleatorio);
@@ -282,8 +331,9 @@ function obtenerDosRecomendaciones() {
 	}
 	let opcionSeleccionada1 = opciones[indices[0]];
 	let opcionSeleccionada2 = opciones[indices[1]];
+	let opcionSeleccionada3 = opciones[indices[2]];
 
-	return [opcionSeleccionada1, opcionSeleccionada2];
+	return [opcionSeleccionada1, opcionSeleccionada2,opcionSeleccionada3];
 }
 
 function showAnswersInConsole() {
@@ -291,10 +341,12 @@ function showAnswersInConsole() {
 	localStorage.setItem("recomendaciones", JSON.stringify(recomendaciones));
 	console.log("Recomendación 1: " + recomendaciones[0]);
 	console.log("Recomendación 2: " + recomendaciones[1]);
+	console.log("Recomendación 3: " + recomendaciones[2]);
 	setTimeout(function () {
-		showBotMessage("Los videojuegos que te recomiendo son: " + recomendaciones.map(item => item.name).join("y ") );
+		showBotMessage("Los videojuegos que te recomiendo son: " + recomendaciones.map(item => item.name).join(" / ") );
 	}, 2000);
 }
+*/
 
 $(window).on('load', function () {
 	showBotMessage('Bienvenido :D');

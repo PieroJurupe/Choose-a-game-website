@@ -174,15 +174,16 @@ include("logeo.php");
   <li >login</a></li>
   <li class="registro-boton"><a class="register-a" href="login.php">login</a></li>  
           
-  </ul><nav ';
+  </ul><nav>;
 <?php } ?>
 </ul>
 </nav>
-<?php if(isset($_SESSION['nombre_usuario'])) { ?>
-    <li class="registro-boton">
-        <span style="color: black; background: none;"><?php echo $_SESSION['nombre_usuario']; ?></span>
-    </li>
-<?php } ?>
+<li>
+    <?php if(isset($_SESSION['nombre_usuario'])) { ?>
+        <a href="#"><?php echo $_SESSION['nombre_usuario']; ?></a>
+    <?php } ?>
+</li>
+
   
 
   <link rel="stylesheet" href="./style.css" />
@@ -205,6 +206,8 @@ include("logeo.php");
           <li><a href="about.html">Informacion</a></li>
 
           <li><a href="Blog.html">Blog</a></li>
+
+          <li><a isset= 'nombre_usuario'></a><li>
         </ul>
        
 
@@ -229,9 +232,9 @@ include("logeo.php");
       </section>
 
       <div class="icons">
-        <a href="#"><i class="ri-instagram-line"></i></a>
-        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-        <a href="#"><i class="ri-twitter-fill"></i></a>
+        <a href="https://www.instagram.com/find.yourgame/"><i class="ri-instagram-line"></i></a>
+        <a href="https://web.facebook.com/profile.php?id=61551374375595"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="https://twitter.com/F1nd_Your_Games"><i class="ri-twitter-fill"></i></a>
       </div>
       <div class="scroll-down">
         <a href="#"><i class="ri-arrow-drop-down-line"></i></a>
